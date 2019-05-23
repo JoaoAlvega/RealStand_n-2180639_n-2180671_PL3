@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model_Real_StandStoreContainer" CdmEntityContainer="Model_Real_StandContainer">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Real_Stand.Cliente)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="NIF" ColumnName="NIF" />
+          <ScalarProperty Name="Morada" ColumnName="Morada" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Real_Stand.Venda)">
+        <MappingFragment StoreEntitySet="Vendas">
+          <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="ClienteIdCliente" ColumnName="ClienteIdCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Alugueres">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Real_Stand.Aluguer)">
+        <MappingFragment StoreEntitySet="Alugueres">
+          <ScalarProperty Name="IdAluguer" ColumnName="IdAluguer" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Kms" ColumnName="Kms" />
+          <ScalarProperty Name="ClienteIdCliente" ColumnName="ClienteIdCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carros">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Real_Stand.Carro)">
+        <MappingFragment StoreEntitySet="Carros">
+          <ScalarProperty Name="IdCarro" ColumnName="IdCarro" />
+          <ScalarProperty Name="NumeroChassis" ColumnName="NumeroChassis" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Combustivel" ColumnName="Combustivel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Real_Stand.CarroOficina)">
+        <MappingFragment StoreEntitySet="Carros_CarroOficina">
+          <ScalarProperty Name="IdCarro" ColumnName="IdCarro" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Kms" ColumnName="Kms" />
+          <ScalarProperty Name="ClienteIdCliente" ColumnName="ClienteIdCliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Real_Stand.CarroVenda)">
+        <MappingFragment StoreEntitySet="Carros_CarroVenda">
+          <ScalarProperty Name="IdCarro" ColumnName="IdCarro" />
+          <ScalarProperty Name="Extras" ColumnName="Extras" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Real_Stand.CarroAluguer)">
+        <MappingFragment StoreEntitySet="Carros_CarroAluguer">
+          <ScalarProperty Name="IdCarro" ColumnName="IdCarro" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Real_Stand.Servico)">
+        <MappingFragment StoreEntitySet="Servicos">
+          <ScalarProperty Name="IdServicos" ColumnName="IdServicos" />
+          <ScalarProperty Name="DataEntrada" ColumnName="DataEntrada" />
+          <ScalarProperty Name="DataSaida" ColumnName="DataSaida" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="CarroOficinaIdCarro" ColumnName="CarroOficinaIdCarro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parcelas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model_Real_Stand.Parcela)">
+        <MappingFragment StoreEntitySet="Parcelas">
+          <ScalarProperty Name="IdParcela" ColumnName="IdParcela" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ServicoIdServicos" ColumnName="ServicoIdServicos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="VendaCarroVenda" TypeName="Model_Real_Stand.VendaCarroVenda" StoreEntitySet="Vendas">
+      <EndProperty Name="CarroVenda">
+        <ScalarProperty Name="IdCarro" ColumnName="CarroVenda_IdCarro" />
+      </EndProperty>
+      <EndProperty Name="Venda">
+        <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AluguerCarroAluguer" TypeName="Model_Real_Stand.AluguerCarroAluguer" StoreEntitySet="Alugueres">
+      <EndProperty Name="CarroAluguer">
+        <ScalarProperty Name="IdCarro" ColumnName="CarroAluguer_IdCarro" />
+      </EndProperty>
+      <EndProperty Name="Aluguer">
+        <ScalarProperty Name="IdAluguer" ColumnName="IdAluguer" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CarroOficinaServico" TypeName="Model_Real_Stand.CarroOficinaServico" StoreEntitySet="Servicos">
+      <EndProperty Name="CarroOficina">
+        <ScalarProperty Name="IdCarro" ColumnName="CarroOficina_IdCarro" />
+      </EndProperty>
+      <EndProperty Name="Servico">
+        <ScalarProperty Name="IdServicos" ColumnName="IdServicos" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

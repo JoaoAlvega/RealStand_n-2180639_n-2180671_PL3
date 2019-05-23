@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="516753972398448db9c32377afec4ef0" Name="Diagram1" ZoomLevel="133" >
+        <EntityTypeShape EntityType="Model_Real_Stand.Cliente" Width="1.5" PointX="1.5" PointY="5.5" />
+        <EntityTypeShape EntityType="Model_Real_Stand.Venda" Width="1.5" PointX="4.125" PointY="5.75" />
+        <EntityTypeShape EntityType="Model_Real_Stand.CarroVenda" Width="1.5" PointX="7.25" PointY="6.125" />
+        <EntityTypeShape EntityType="Model_Real_Stand.Aluguer" Width="1.5" PointX="4.125" PointY="8.375" />
+        <EntityTypeShape EntityType="Model_Real_Stand.CarroAluguer" Width="1.5" PointX="10.375" PointY="8.5" />
+        <EntityTypeShape EntityType="Model_Real_Stand.Carro" Width="1.5" PointX="10.375" PointY="6.125" />
+        <EntityTypeShape EntityType="Model_Real_Stand.CarroOficina" Width="1.5" PointX="10.375" PointY="2.25" />
+        <EntityTypeShape EntityType="Model_Real_Stand.Servico" Width="1.5" PointX="7.25" PointY="3.125" />
+        <EntityTypeShape EntityType="Model_Real_Stand.Parcela" Width="1.5" PointX="4.125" PointY="3.25" />
+        <AssociationConnector Association="Model_Real_Stand.ClienteCarroOficina" />
+        <AssociationConnector Association="Model_Real_Stand.ClienteAluguer" />
+        <AssociationConnector Association="Model_Real_Stand.ClienteVenda" />
+        <AssociationConnector Association="Model_Real_Stand.VendaCarroVenda" />
+        <AssociationConnector Association="Model_Real_Stand.AluguerCarroAluguer" />
+        <AssociationConnector Association="Model_Real_Stand.CarroOficinaServico" />
+        <AssociationConnector Association="Model_Real_Stand.ServicoParcela" />
+        <InheritanceConnector EntityType="Model_Real_Stand.CarroOficina" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

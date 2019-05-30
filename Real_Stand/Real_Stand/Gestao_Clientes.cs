@@ -43,14 +43,6 @@ namespace Real_Stand
             }
             else
             {
-                Cliente cliente = new Cliente(nomeTextBox.Text, int.Parse(nIFTextBox.Text), moradaTextBox.Text, int.Parse(contactoTextBox.Text));
-                minhaOficina.Clientes.Add(cliente);
-
-                nomeTextBox.Text = "";
-                nIFTextBox.Text = "";
-                moradaTextBox.Text = "";
-                contactoTextBox.Text = "";
-
                 minhaOficina.SaveChanges();
             }
         }

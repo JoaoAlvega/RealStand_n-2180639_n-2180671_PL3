@@ -76,6 +76,7 @@ namespace Real_Stand
                 textBoxKms.Text = "";
 
                 minhaOficina.SaveChanges();
+                MessageBox.Show("Alteracões Guardadas");
             }
         }
 

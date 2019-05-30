@@ -13,6 +13,7 @@ namespace Real_Stand
             DataEntrada = dataEntrada;
             DataSaida = dataSaida;
             Tipo = tipo;
+            this.Parcelas = new HashSet<Parcela>();
         }
         public override string ToString()
         {

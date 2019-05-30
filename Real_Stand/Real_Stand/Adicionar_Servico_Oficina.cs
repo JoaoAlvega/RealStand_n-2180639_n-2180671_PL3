@@ -54,6 +54,7 @@ namespace Real_Stand
                 textBoxDtaFim.Text = "";
 
                 minhaOficina.SaveChanges();
+                MessageBox.Show("Alteracões Guardadas");
             }
         }
     }

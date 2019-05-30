@@ -13,6 +13,7 @@ namespace Real_Stand
         {
             Matricula = matricula;
             Kms = kms;
+            this.Servicos = new HashSet<Servico>();
         }
         public override string ToString()
         {

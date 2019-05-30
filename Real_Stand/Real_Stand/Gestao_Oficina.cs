@@ -75,15 +75,29 @@ namespace Real_Stand
             adicionar_Carro_Oficina.Show(this);
             Hide();
 
-            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
-
+            adicionar_Carro_Oficina.FormClosed += new FormClosedEventHandler(Form_Closed);
         }
+        void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
             
+        }
+
         //Listar Carro
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
-            listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+            if (carroSelecionado == null)
+            {
+                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+                listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+            }
+            else
+            {
+                listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+            }
+            
         }
 
         //Remover Carro
@@ -116,7 +130,15 @@ namespace Real_Stand
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
         {
             Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
-            listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+            if (servicoSelecionado == null)
+            {
+                CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+                listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+            }
+            else
+            {
+                listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+            }
         }
 
         //Remover Serviços

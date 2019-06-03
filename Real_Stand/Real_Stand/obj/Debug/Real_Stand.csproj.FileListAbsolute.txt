@@ -111,3 +111,26 @@ C:\Users\2180671\Documents\RealStand_n-2180639_n-2180671_PL3-master\Real_Stand\R
 C:\Users\2180671\Documents\RealStand_n-2180639_n-2180671_PL3-master\Real_Stand\Real_Stand\obj\Debug\Real_Stand.csproj.GenerateResource.cache
 C:\Users\2180671\Documents\RealStand_n-2180639_n-2180671_PL3-master\Real_Stand\Real_Stand\obj\Debug\Real_Stand.csproj.CoreCompileInputs.cache
 C:\Users\2180671\Documents\RealStand_n-2180639_n-2180671_PL3-master\Real_Stand\Real_Stand\obj\Debug\Real_Stand.csproj.CopyComplete
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\bin\Debug\Real_Stand.exe.config
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\bin\Debug\Real_Stand.exe
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\bin\Debug\Real_Stand.pdb
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\bin\Debug\EntityFramework.dll
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\bin\Debug\EntityFramework.xml
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.csprojAssemblyReference.cache
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Adicionar_Aluguer.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Adicionar_Carro_Aluguer.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Adicionar_Carro_Oficina.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Adicionar_Servico_Oficina.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Gestao_Aluguer.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Gestao_Clientes.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Gestao_Oficina.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Gestao_Vendas.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Pagina_Principal.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Properties.Resources.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.csproj.GenerateResource.cache
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.csproj.CoreCompileInputs.cache
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.csproj.CopyComplete
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.exe
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.pdb

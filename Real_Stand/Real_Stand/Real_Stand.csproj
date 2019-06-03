@@ -73,6 +73,12 @@
     <Compile Include="Adicionar_Carro_Oficina.Designer.cs">
       <DependentUpon>Adicionar_Carro_Oficina.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adicionar_Carro_Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar_Carro_Venda.Designer.cs">
+      <DependentUpon>Adicionar_Carro_Venda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adicionar_Servico_Oficina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,7 @@
     <Compile Include="CarroOficina.cs">
       <DependentUpon>Model_Real_Stand.tt</DependentUpon>
     </Compile>
+    <Compile Include="CarroVenda.created.cs" />
     <Compile Include="CarroVenda.cs">
       <DependentUpon>Model_Real_Stand.tt</DependentUpon>
     </Compile>
@@ -157,6 +164,7 @@
     <Compile Include="Servico.cs">
       <DependentUpon>Model_Real_Stand.tt</DependentUpon>
     </Compile>
+    <Compile Include="Venda.created.cs" />
     <Compile Include="Venda.cs">
       <DependentUpon>Model_Real_Stand.tt</DependentUpon>
     </Compile>
@@ -168,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Adicionar_Carro_Oficina.resx">
       <DependentUpon>Adicionar_Carro_Oficina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar_Carro_Venda.resx">
+      <DependentUpon>Adicionar_Carro_Venda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Adicionar_Servico_Oficina.resx">
       <DependentUpon>Adicionar_Servico_Oficina.cs</DependentUpon>

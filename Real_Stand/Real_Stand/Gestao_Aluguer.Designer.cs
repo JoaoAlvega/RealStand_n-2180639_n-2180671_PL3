@@ -150,7 +150,7 @@
             this.buttonCarroAluguer.Name = "buttonCarroAluguer";
             this.buttonCarroAluguer.Size = new System.Drawing.Size(142, 21);
             this.buttonCarroAluguer.TabIndex = 124;
-            this.buttonCarroAluguer.Text = "Adicionar Carro Aluguer";
+            this.buttonCarroAluguer.Text = "Adicionar Carro ";
             this.buttonCarroAluguer.UseVisualStyleBackColor = true;
             this.buttonCarroAluguer.Click += new System.EventHandler(this.buttonCarroAluguer_Click);
             // 

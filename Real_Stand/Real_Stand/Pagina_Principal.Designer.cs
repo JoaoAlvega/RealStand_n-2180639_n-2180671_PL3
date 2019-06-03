@@ -71,6 +71,7 @@
             this.pictureBoxGestaoVendas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGestaoVendas.TabIndex = 1;
             this.pictureBoxGestaoVendas.TabStop = false;
+            this.pictureBoxGestaoVendas.Click += new System.EventHandler(this.pictureBoxGestaoVendas_Click);
             // 
             // labelGestaoVendas
             // 

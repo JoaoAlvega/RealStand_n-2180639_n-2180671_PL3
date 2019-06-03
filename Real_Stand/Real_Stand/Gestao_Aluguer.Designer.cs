@@ -33,7 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelTotalGasto = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.textBoxMostraNif = new System.Windows.Forms.TextBox();
             this.textBoxMostraNome = new System.Windows.Forms.TextBox();
+            this.labelMostraNif = new System.Windows.Forms.Label();
             this.labelMostraNome = new System.Windows.Forms.Label();
             this.listBoxAluguer = new System.Windows.Forms.ListBox();
             this.buttonAdicionarCarro = new System.Windows.Forms.Button();
@@ -89,12 +91,29 @@
             this.label10.TabIndex = 117;
             this.label10.Text = "Total Gasto:";
             // 
+            // textBoxMostraNif
+            // 
+            this.textBoxMostraNif.Location = new System.Drawing.Point(271, 75);
+            this.textBoxMostraNif.Name = "textBoxMostraNif";
+            this.textBoxMostraNif.Size = new System.Drawing.Size(302, 20);
+            this.textBoxMostraNif.TabIndex = 116;
+            // 
             // textBoxMostraNome
             // 
             this.textBoxMostraNome.Location = new System.Drawing.Point(271, 49);
             this.textBoxMostraNome.Name = "textBoxMostraNome";
             this.textBoxMostraNome.Size = new System.Drawing.Size(302, 20);
             this.textBoxMostraNome.TabIndex = 115;
+            // 
+            // labelMostraNif
+            // 
+            this.labelMostraNif.AutoSize = true;
+            this.labelMostraNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMostraNif.Location = new System.Drawing.Point(233, 73);
+            this.labelMostraNif.Name = "labelMostraNif";
+            this.labelMostraNif.Size = new System.Drawing.Size(32, 20);
+            this.labelMostraNif.TabIndex = 114;
+            this.labelMostraNif.Text = "Nif:";
             // 
             // labelMostraNome
             // 
@@ -146,7 +165,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(142, 21);
             this.button1.TabIndex = 124;
-            this.button1.Text = "Adicionar Carro";
+            this.button1.Text = "Adicionar Carro Aluguer";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -171,7 +190,9 @@
             this.Controls.Add(this.listBoxAluguer);
             this.Controls.Add(this.labelTotalGasto);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.textBoxMostraNif);
             this.Controls.Add(this.textBoxMostraNome);
+            this.Controls.Add(this.labelMostraNif);
             this.Controls.Add(this.labelMostraNome);
             this.Controls.Add(this.listBoxClientes);
             this.Controls.Add(this.label2);
@@ -190,7 +211,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTotalGasto;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxMostraNif;
         private System.Windows.Forms.TextBox textBoxMostraNome;
+        private System.Windows.Forms.Label labelMostraNif;
         private System.Windows.Forms.Label labelMostraNome;
         private System.Windows.Forms.ListBox listBoxAluguer;
         private System.Windows.Forms.Button buttonAdicionarCarro;

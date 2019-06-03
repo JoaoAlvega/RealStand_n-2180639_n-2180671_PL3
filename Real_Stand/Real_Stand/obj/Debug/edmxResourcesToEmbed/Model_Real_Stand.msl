@@ -88,13 +88,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="VendaCarroVenda" TypeName="Model_Real_Stand.VendaCarroVenda" StoreEntitySet="Vendas">
-      <EndProperty Name="CarroVenda">
-        <ScalarProperty Name="IdCarro" ColumnName="CarroVenda_IdCarro" />
-      </EndProperty>
+    <AssociationSetMapping Name="VendaCarroVenda" TypeName="Model_Real_Stand.VendaCarroVenda" StoreEntitySet="Carros_CarroVenda">
       <EndProperty Name="Venda">
-        <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+        <ScalarProperty Name="IdVenda" ColumnName="Venda_IdVenda" />
       </EndProperty>
+      <EndProperty Name="CarroVenda">
+        <ScalarProperty Name="IdCarro" ColumnName="IdCarro" />
+      </EndProperty>
+      <Condition ColumnName="Venda_IdVenda" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="AluguerCarroAluguer" TypeName="Model_Real_Stand.AluguerCarroAluguer" StoreEntitySet="Alugueres">
       <EndProperty Name="CarroAluguer">

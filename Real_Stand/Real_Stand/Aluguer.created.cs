@@ -8,7 +8,7 @@ namespace Real_Stand
 {
     public partial class Aluguer
     {
-        public Aluguer(string dataInicio, string dataFim, int valor, int kms)
+        public Aluguer(string dataInicio, string dataFim, string valor, string kms)
         {
             DataInicio = dataInicio;
             DataFim = dataFim;

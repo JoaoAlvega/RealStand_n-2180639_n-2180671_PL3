@@ -29,6 +29,12 @@ namespace Real_Stand
             listBoxCarroAluguer.DataSource = minhaOficina.Carros.OfType<CarroAluguer>().ToList();
             listBoxAluguer.DataSource = minhaOficina.Alugueres.OfType<Aluguer>().ToList();
         }
+        void Form_Closed(object sender, FormClosedEventArgs e)
+        {
+            listBoxClientes.DataSource = minhaOficina.Clientes.ToList<Cliente>();
+            listBoxCarroAluguer.DataSource = minhaOficina.Carros.OfType<CarroAluguer>().ToList();
+            listBoxAluguer.DataSource = minhaOficina.Alugueres.OfType<Aluguer>().ToList();
+        }
 
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
@@ -53,12 +59,7 @@ namespace Real_Stand
 
             adicionar_Carro_Aluguer.FormClosed += new FormClosedEventHandler(Form_Closed);
         }
-        void Form_Closed(object sender, FormClosedEventArgs e)
-        {
-            listBoxClientes.DataSource = minhaOficina.Clientes.ToList<Cliente>();
-            listBoxCarroAluguer.DataSource = minhaOficina.Carros.OfType<CarroAluguer>().ToList();
-
-        }
+        
         //Alugueres-----------------------------------------------------------------------------------------------------------------------------------------------
         private void buttonAluguer_Click(object sender, EventArgs e)
         {

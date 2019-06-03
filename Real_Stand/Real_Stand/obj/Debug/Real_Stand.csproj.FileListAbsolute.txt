@@ -134,3 +134,5 @@ C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stan
 C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.csproj.CopyComplete
 C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.exe
 C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.pdb
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Adicionar_Carro_Venda.resources
+C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\obj\Debug\Real_Stand.Adicionar_Venda.resources

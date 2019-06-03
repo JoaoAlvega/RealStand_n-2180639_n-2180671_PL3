@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionar_Venda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar_Venda.Designer.cs">
+      <DependentUpon>Adicionar_Venda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adicionar_Aluguer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Adicionar_Servico_Oficina.resx">
       <DependentUpon>Adicionar_Servico_Oficina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar_Venda.resx">
+      <DependentUpon>Adicionar_Venda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestao_Aluguer.resx">
       <DependentUpon>Gestao_Aluguer.cs</DependentUpon>

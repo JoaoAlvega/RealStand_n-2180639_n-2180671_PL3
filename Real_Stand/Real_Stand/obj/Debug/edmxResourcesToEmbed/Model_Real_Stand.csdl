@@ -54,7 +54,7 @@
       <PropertyRef Name="IdVenda" />
     </Key>
     <Property Name="IdVenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Valor" Type="Int32" Nullable="false" />
+    <Property Name="Valor" Type="String" Nullable="false" />
     <Property Name="Estado" Type="String" Nullable="false" />
     <Property Name="Data" Type="String" Nullable="false" />
     <Property Name="ClienteIdCliente" Type="Int32" Nullable="false" />
@@ -72,8 +72,8 @@
     <Property Name="IdAluguer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="DataInicio" Type="String" Nullable="false" />
     <Property Name="DataFim" Type="String" Nullable="false" />
-    <Property Name="Valor" Type="Int32" Nullable="false" />
-    <Property Name="Kms" Type="Int32" Nullable="false" />
+    <Property Name="Valor" Type="String" Nullable="false" />
+    <Property Name="Kms" Type="String" Nullable="false" />
     <Property Name="ClienteIdCliente" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Cliente" Relationship="Model_Real_Stand.ClienteAluguer" FromRole="Aluguer" ToRole="Cliente" />
     <NavigationProperty Name="CarroAluguer" Relationship="Model_Real_Stand.AluguerCarroAluguer" FromRole="Aluguer" ToRole="CarroAluguer" />
@@ -161,8 +161,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="VendaCarroVenda">
-    <End Type="Model_Real_Stand.Venda" Role="Venda" Multiplicity="1" />
-    <End Type="Model_Real_Stand.CarroVenda" Role="CarroVenda" Multiplicity="1" />
+    <End Type="Model_Real_Stand.Venda" Role="Venda" Multiplicity="0..1" />
+    <End Type="Model_Real_Stand.CarroVenda" Role="CarroVenda" Multiplicity="0..1" />
   </Association>
   <Association Name="AluguerCarroAluguer">
     <End Type="Model_Real_Stand.Aluguer" Role="Aluguer" Multiplicity="*" />

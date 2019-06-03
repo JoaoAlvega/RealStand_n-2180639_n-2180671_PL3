@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace Real_Stand
 {
@@ -25,36 +26,30 @@ namespace Real_Stand
 
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
-            Gestao_Aluguer gestao_Aluguer = (Gestao_Aluguer)Tag;
-            gestao_Aluguer.Show();
+            Gestao_Vendas gestao_Vendas = (Gestao_Vendas)Tag;
+            gestao_Vendas.Show();
             Close();
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
+
                 if (textBoxMarca.Text.Length == 0 || textBoxModelo.Text.Length == 0 || textBoxNumChassis.Text.Length == 0)
                 {
                     MessageBox.Show("Caixa de Texto vazia");
                 }
                 else
                 {
-                    string MatriculaCompleta = textBoxMatricula.Text + "-" + textBoxMatricula2.Text + "-" + textBoxMatricula3.Text;
 
-                    CarroAluguer carroAluguer = new CarroAluguer(textBoxNumChassis.Text, textBoxMarca.Text, textBoxModelo.Text, comboBoxCombustivel.SelectedItem.ToString(),
-            comboBoxEstado.SelectedItem.ToString(), MatriculaCompleta);
-                    minhaOficina.Carros.Add(carroAluguer);
+                    CarroVenda carroVenda = new CarroVenda(textBoxNumChassis.Text, textBoxMarca.Text, textBoxModelo.Text, comboBoxCombustivel.SelectedItem.ToString(), textBoxExtras.Text);
 
+                    minhaOficina.Carros.Add(carroVenda);
 
                     minhaOficina.SaveChanges();
                     MessageBox.Show("Alteracões Guardadas");
                 }
-            }
-            catch
-            {
-                return;
-            }
+            
+                
         }
     }
 }

@@ -24,9 +24,9 @@ public partial class Aluguer
 
     public string DataFim { get; set; }
 
-    public int Valor { get; set; }
+    public string Valor { get; set; }
 
-    public int Kms { get; set; }
+    public string Kms { get; set; }
 
     public int ClienteIdCliente { get; set; }
 

@@ -32,7 +32,7 @@
             this.buttonCarroVenda = new System.Windows.Forms.Button();
             this.listBoxCarroVenda = new System.Windows.Forms.ListBox();
             this.buttonServiços = new System.Windows.Forms.Button();
-            this.buttonAluguer = new System.Windows.Forms.Button();
+            this.buttonVenda = new System.Windows.Forms.Button();
             this.listBoxVenda = new System.Windows.Forms.ListBox();
             this.labelTotalGasto = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,6 +60,7 @@
             this.buttonCarroVenda.TabIndex = 137;
             this.buttonCarroVenda.Text = "Adicionar Carro";
             this.buttonCarroVenda.UseVisualStyleBackColor = true;
+            this.buttonCarroVenda.Click += new System.EventHandler(this.buttonCarroVenda_Click);
             // 
             // listBoxCarroVenda
             // 
@@ -78,14 +79,15 @@
             this.buttonServiços.Text = "Apagar";
             this.buttonServiços.UseVisualStyleBackColor = true;
             // 
-            // buttonAluguer
+            // buttonVenda
             // 
-            this.buttonAluguer.Location = new System.Drawing.Point(451, 349);
-            this.buttonAluguer.Name = "buttonAluguer";
-            this.buttonAluguer.Size = new System.Drawing.Size(102, 21);
-            this.buttonAluguer.TabIndex = 134;
-            this.buttonAluguer.Text = "Adicionar Venda";
-            this.buttonAluguer.UseVisualStyleBackColor = true;
+            this.buttonVenda.Location = new System.Drawing.Point(451, 349);
+            this.buttonVenda.Name = "buttonVenda";
+            this.buttonVenda.Size = new System.Drawing.Size(102, 21);
+            this.buttonVenda.TabIndex = 134;
+            this.buttonVenda.Text = "Adicionar Venda";
+            this.buttonVenda.UseVisualStyleBackColor = true;
+            this.buttonVenda.Click += new System.EventHandler(this.buttonVenda_Click);
             // 
             // listBoxVenda
             // 
@@ -94,6 +96,7 @@
             this.listBoxVenda.Name = "listBoxVenda";
             this.listBoxVenda.Size = new System.Drawing.Size(231, 225);
             this.listBoxVenda.TabIndex = 133;
+            this.listBoxVenda.SelectedIndexChanged += new System.EventHandler(this.listBoxVenda_SelectedIndexChanged);
             // 
             // labelTotalGasto
             // 
@@ -169,7 +172,7 @@
             this.Controls.Add(this.buttonCarroVenda);
             this.Controls.Add(this.listBoxCarroVenda);
             this.Controls.Add(this.buttonServiços);
-            this.Controls.Add(this.buttonAluguer);
+            this.Controls.Add(this.buttonVenda);
             this.Controls.Add(this.listBoxVenda);
             this.Controls.Add(this.labelTotalGasto);
             this.Controls.Add(this.label10);
@@ -192,7 +195,7 @@
         private System.Windows.Forms.Button buttonCarroVenda;
         private System.Windows.Forms.ListBox listBoxCarroVenda;
         private System.Windows.Forms.Button buttonServiços;
-        private System.Windows.Forms.Button buttonAluguer;
+        private System.Windows.Forms.Button buttonVenda;
         private System.Windows.Forms.ListBox listBoxVenda;
         private System.Windows.Forms.Label labelTotalGasto;
         private System.Windows.Forms.Label label10;

@@ -20,7 +20,7 @@ public partial class Venda
 
     public int IdVenda { get; set; }
 
-    public int Valor { get; set; }
+    public string Valor { get; set; }
 
     public string Estado { get; set; }
 

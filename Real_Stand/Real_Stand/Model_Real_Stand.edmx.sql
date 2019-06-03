@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/03/2019 10:12:49
--- Generated from EDMX file: C:\Users\2180671\Documents\RealStand_n-2180639_n-2180671_PL3-master\Real_Stand\Real_Stand\Model_Real_Stand.edmx
+-- Date Created: 06/03/2019 17:49:23
+-- Generated from EDMX file: C:\Users\alveg\Documents\IPL\Desenvolvimento de Aplicações\RealStand\Real_Stand\Real_Stand\Model_Real_Stand.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -27,7 +27,7 @@ IF OBJECT_ID(N'[dbo].[FK_ClienteVenda]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Vendas] DROP CONSTRAINT [FK_ClienteVenda];
 GO
 IF OBJECT_ID(N'[dbo].[FK_VendaCarroVenda]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Vendas] DROP CONSTRAINT [FK_VendaCarroVenda];
+    ALTER TABLE [dbo].[Carros_CarroVenda] DROP CONSTRAINT [FK_VendaCarroVenda];
 GO
 IF OBJECT_ID(N'[dbo].[FK_AluguerCarroAluguer]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Alugueres] DROP CONSTRAINT [FK_AluguerCarroAluguer];
@@ -97,11 +97,10 @@ GO
 -- Creating table 'Vendas'
 CREATE TABLE [dbo].[Vendas] (
     [IdVenda] int IDENTITY(1,1) NOT NULL,
-    [Valor] int  NOT NULL,
+    [Valor] nvarchar(max)  NOT NULL,
     [Estado] nvarchar(max)  NOT NULL,
     [Data] nvarchar(max)  NOT NULL,
-    [ClienteIdCliente] int  NOT NULL,
-    [CarroVenda_IdCarro] int  NOT NULL
+    [ClienteIdCliente] int  NOT NULL
 );
 GO
 
@@ -110,8 +109,8 @@ CREATE TABLE [dbo].[Alugueres] (
     [IdAluguer] int IDENTITY(1,1) NOT NULL,
     [DataInicio] nvarchar(max)  NOT NULL,
     [DataFim] nvarchar(max)  NOT NULL,
-    [Valor] int  NOT NULL,
-    [Kms] int  NOT NULL,
+    [Valor] nvarchar(max)  NOT NULL,
+    [Kms] nvarchar(max)  NOT NULL,
     [ClienteIdCliente] int  NOT NULL,
     [CarroAluguer_IdCarro] int  NOT NULL
 );
@@ -159,7 +158,8 @@ GO
 -- Creating table 'Carros_CarroVenda'
 CREATE TABLE [dbo].[Carros_CarroVenda] (
     [Extras] nvarchar(max)  NOT NULL,
-    [IdCarro] int  NOT NULL
+    [IdCarro] int  NOT NULL,
+    [Venda_IdVenda] int  NULL
 );
 GO
 
@@ -278,19 +278,19 @@ ON [dbo].[Vendas]
     ([ClienteIdCliente]);
 GO
 
--- Creating foreign key on [CarroVenda_IdCarro] in table 'Vendas'
-ALTER TABLE [dbo].[Vendas]
+-- Creating foreign key on [Venda_IdVenda] in table 'Carros_CarroVenda'
+ALTER TABLE [dbo].[Carros_CarroVenda]
 ADD CONSTRAINT [FK_VendaCarroVenda]
-    FOREIGN KEY ([CarroVenda_IdCarro])
-    REFERENCES [dbo].[Carros_CarroVenda]
-        ([IdCarro])
+    FOREIGN KEY ([Venda_IdVenda])
+    REFERENCES [dbo].[Vendas]
+        ([IdVenda])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_VendaCarroVenda'
 CREATE INDEX [IX_FK_VendaCarroVenda]
-ON [dbo].[Vendas]
-    ([CarroVenda_IdCarro]);
+ON [dbo].[Carros_CarroVenda]
+    ([Venda_IdVenda]);
 GO
 
 -- Creating foreign key on [CarroAluguer_IdCarro] in table 'Alugueres'

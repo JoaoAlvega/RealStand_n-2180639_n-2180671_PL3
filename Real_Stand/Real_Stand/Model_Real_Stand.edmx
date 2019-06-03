@@ -71,11 +71,10 @@
       <PropertyRef Name="IdVenda" />
     </Key>
     <Property Name="IdVenda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Valor" Type="int" Nullable="false" />
+    <Property Name="Valor" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Estado" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Data" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ClienteIdCliente" Type="int" Nullable="false" />
-    <Property Name="CarroVenda_IdCarro" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Alugueres">
     <Key>
@@ -84,8 +83,8 @@
     <Property Name="IdAluguer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="DataInicio" Type="nvarchar(max)" Nullable="false" />
     <Property Name="DataFim" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Valor" Type="int" Nullable="false" />
-    <Property Name="Kms" Type="int" Nullable="false" />
+    <Property Name="Valor" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Kms" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ClienteIdCliente" Type="int" Nullable="false" />
     <Property Name="CarroAluguer_IdCarro" Type="int" Nullable="false" />
   </EntityType>
@@ -134,6 +133,7 @@
     </Key>
     <Property Name="Extras" Type="nvarchar(max)" Nullable="false" />
     <Property Name="IdCarro" Type="int" Nullable="false" />
+    <Property Name="Venda_IdVenda" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="Carros_CarroAluguer">
     <Key>
@@ -182,14 +182,14 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="VendaCarroVenda">
-    <End Role="Venda" Type="Model_Real_Stand.Store.Vendas" Multiplicity="*" />
-    <End Role="CarroVenda" Type="Model_Real_Stand.Store.Carros_CarroVenda" Multiplicity="1" />
+    <End Role="Venda" Type="Model_Real_Stand.Store.Vendas" Multiplicity="0..1" />
+    <End Role="CarroVenda" Type="Model_Real_Stand.Store.Carros_CarroVenda" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="CarroVenda">
-        <PropertyRef Name="IdCarro" />
+      <Principal Role="Venda">
+        <PropertyRef Name="IdVenda" />
       </Principal>
-      <Dependent Role="Venda">
-        <PropertyRef Name="CarroVenda_IdCarro" />
+      <Dependent Role="CarroVenda">
+        <PropertyRef Name="Venda_IdVenda" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -333,7 +333,7 @@
             <PropertyRef Name="IdVenda" />
           </Key>
           <Property Name="IdVenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Valor" Type="Int32" Nullable="false" />
+          <Property Name="Valor" Type="String" Nullable="false" />
           <Property Name="Estado" Type="String" Nullable="false" />
           <Property Name="Data" Type="String" Nullable="false" />
           <Property Name="ClienteIdCliente" Type="Int32" Nullable="false" />
@@ -351,8 +351,8 @@
           <Property Name="IdAluguer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DataInicio" Type="String" Nullable="false" />
           <Property Name="DataFim" Type="String" Nullable="false" />
-          <Property Name="Valor" Type="Int32" Nullable="false" />
-          <Property Name="Kms" Type="Int32" Nullable="false" />
+          <Property Name="Valor" Type="String" Nullable="false" />
+          <Property Name="Kms" Type="String" Nullable="false" />
           <Property Name="ClienteIdCliente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Model_Real_Stand.ClienteAluguer" FromRole="Aluguer" ToRole="Cliente" />
           <NavigationProperty Name="CarroAluguer" Relationship="Model_Real_Stand.AluguerCarroAluguer" FromRole="Aluguer" ToRole="CarroAluguer" />
@@ -442,9 +442,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="VendaCarroVenda">
-          <End Type="Model_Real_Stand.Venda" Role="Venda" Multiplicity="1" >
+          <End Type="Model_Real_Stand.Venda" Role="Venda" Multiplicity="0..1" >
           </End>
-          <End Type="Model_Real_Stand.CarroVenda" Role="CarroVenda" Multiplicity="1" />
+          <End Type="Model_Real_Stand.CarroVenda" Role="CarroVenda" Multiplicity="0..1" />
         </Association>
         <Association Name="AluguerCarroAluguer">
           <End Type="Model_Real_Stand.Aluguer" Role="Aluguer" Multiplicity="*" >
@@ -564,13 +564,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="VendaCarroVenda" TypeName="Model_Real_Stand.VendaCarroVenda" StoreEntitySet="Vendas">
-      <EndProperty Name="CarroVenda">
-        <ScalarProperty Name="IdCarro" ColumnName="CarroVenda_IdCarro" />
-      </EndProperty>
+    <AssociationSetMapping Name="VendaCarroVenda" TypeName="Model_Real_Stand.VendaCarroVenda" StoreEntitySet="Carros_CarroVenda">
       <EndProperty Name="Venda">
-        <ScalarProperty Name="IdVenda" ColumnName="IdVenda" />
+        <ScalarProperty Name="IdVenda" ColumnName="Venda_IdVenda" />
       </EndProperty>
+      <EndProperty Name="CarroVenda">
+        <ScalarProperty Name="IdCarro" ColumnName="IdCarro" />
+      </EndProperty>
+      <Condition ColumnName="Venda_IdVenda" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="AluguerCarroAluguer" TypeName="Model_Real_Stand.AluguerCarroAluguer" StoreEntitySet="Alugueres">
       <EndProperty Name="CarroAluguer">

@@ -61,7 +61,7 @@
             // labelTipoServico
             // 
             this.labelTipoServico.AutoSize = true;
-            this.labelTipoServico.Location = new System.Drawing.Point(112, 146);
+            this.labelTipoServico.Location = new System.Drawing.Point(120, 147);
             this.labelTipoServico.Name = "labelTipoServico";
             this.labelTipoServico.Size = new System.Drawing.Size(34, 13);
             this.labelTipoServico.TabIndex = 132;

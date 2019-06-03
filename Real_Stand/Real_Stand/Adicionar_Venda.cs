@@ -10,40 +10,39 @@ using System.Windows.Forms;
 
 namespace Real_Stand
 {
-    public partial class Adicionar_Aluguer : Form
+    public partial class Adicionar_Venda : Form
     {
         private Model_Real_StandContainer minhaOficina;
         private Cliente cliente;
-        private CarroAluguer carro;
-        public Adicionar_Aluguer(Cliente clienteSelecionado, CarroAluguer carroSelecionado, Model_Real_StandContainer oficina)
+        private CarroVenda carro;
+        public Adicionar_Venda(Cliente clienteSelecionado, CarroVenda carroSelecionado, Model_Real_StandContainer oficina)
         {
             InitializeComponent();
             cliente = clienteSelecionado;
             carro = carroSelecionado;
             minhaOficina = oficina;
         }
-
-        private void Adicionar_Aluguer_Load(object sender, EventArgs e)
+        private void Adicionar_Venda_Load(object sender, EventArgs e)
         {
 
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
-            Gestao_Aluguer gestao_Aluguer = (Gestao_Aluguer)Tag;
-            gestao_Aluguer.Show();
+            Gestao_Vendas gestao_Vendas = (Gestao_Vendas)Tag;
+            gestao_Vendas.Show();
             Close();
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            Aluguer aluguer = new Aluguer(dateTimePickerInicio.Value.ToString(), dateTimePickerFim.Value.ToString(), textBoxValor.Text, textBoxKms.Text);
+                Venda venda = new Venda(textBoxValor.Text, textBoxEstado.Text, dateTimePickerData.Value.ToString());
 
-            aluguer.CarroAluguer = carro;
-            cliente.Alugueres.Add(aluguer);
+                venda.CarroVenda = carro;
+                cliente.Vendas.Add(venda);
 
-            minhaOficina.SaveChanges();
-            MessageBox.Show("Alteracões Guardadas");
+                minhaOficina.SaveChanges();
+                MessageBox.Show("Alteracões Guardadas");
         }
     }
 }

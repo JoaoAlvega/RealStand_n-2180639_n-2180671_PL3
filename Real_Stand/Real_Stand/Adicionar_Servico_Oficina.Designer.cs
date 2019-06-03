@@ -31,21 +31,13 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.labelCliente = new System.Windows.Forms.Label();
-            this.textBoxDtaInicio1 = new System.Windows.Forms.TextBox();
             this.labelDtaFim = new System.Windows.Forms.Label();
             this.labelDtaInicio = new System.Windows.Forms.Label();
             this.labelTipoServico = new System.Windows.Forms.Label();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxDtaInicio2 = new System.Windows.Forms.TextBox();
-            this.textBoxDtaInicio3 = new System.Windows.Forms.TextBox();
-            this.textBoxDtaSaida1 = new System.Windows.Forms.TextBox();
-            this.textBoxDtaSaida2 = new System.Windows.Forms.TextBox();
-            this.textBoxDtaSaida3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFim = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // buttonGuardar
@@ -75,14 +67,6 @@
             this.labelCliente.Name = "labelCliente";
             this.labelCliente.Size = new System.Drawing.Size(0, 13);
             this.labelCliente.TabIndex = 118;
-            // 
-            // textBoxDtaInicio1
-            // 
-            this.textBoxDtaInicio1.Location = new System.Drawing.Point(171, 169);
-            this.textBoxDtaInicio1.Name = "textBoxDtaInicio1";
-            this.textBoxDtaInicio1.Size = new System.Drawing.Size(33, 20);
-            this.textBoxDtaInicio1.TabIndex = 116;
-            this.textBoxDtaInicio1.Text = "dia";
             // 
             // labelDtaFim
             // 
@@ -135,100 +119,30 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 120;
             // 
-            // textBoxDtaInicio2
+            // dateTimePickerInicio
             // 
-            this.textBoxDtaInicio2.Location = new System.Drawing.Point(226, 169);
-            this.textBoxDtaInicio2.Name = "textBoxDtaInicio2";
-            this.textBoxDtaInicio2.Size = new System.Drawing.Size(33, 20);
-            this.textBoxDtaInicio2.TabIndex = 121;
-            this.textBoxDtaInicio2.Text = "mes";
+            this.dateTimePickerInicio.Location = new System.Drawing.Point(171, 169);
+            this.dateTimePickerInicio.Name = "dateTimePickerInicio";
+            this.dateTimePickerInicio.Size = new System.Drawing.Size(218, 20);
+            this.dateTimePickerInicio.TabIndex = 149;
             // 
-            // textBoxDtaInicio3
+            // dateTimePickerFim
             // 
-            this.textBoxDtaInicio3.Location = new System.Drawing.Point(283, 169);
-            this.textBoxDtaInicio3.Name = "textBoxDtaInicio3";
-            this.textBoxDtaInicio3.Size = new System.Drawing.Size(33, 20);
-            this.textBoxDtaInicio3.TabIndex = 122;
-            this.textBoxDtaInicio3.Text = "ano";
-            // 
-            // textBoxDtaSaida1
-            // 
-            this.textBoxDtaSaida1.Location = new System.Drawing.Point(171, 195);
-            this.textBoxDtaSaida1.Name = "textBoxDtaSaida1";
-            this.textBoxDtaSaida1.Size = new System.Drawing.Size(33, 20);
-            this.textBoxDtaSaida1.TabIndex = 123;
-            this.textBoxDtaSaida1.Text = "dia";
-            // 
-            // textBoxDtaSaida2
-            // 
-            this.textBoxDtaSaida2.Location = new System.Drawing.Point(226, 195);
-            this.textBoxDtaSaida2.Name = "textBoxDtaSaida2";
-            this.textBoxDtaSaida2.Size = new System.Drawing.Size(33, 20);
-            this.textBoxDtaSaida2.TabIndex = 124;
-            this.textBoxDtaSaida2.Text = "mes";
-            // 
-            // textBoxDtaSaida3
-            // 
-            this.textBoxDtaSaida3.Location = new System.Drawing.Point(283, 195);
-            this.textBoxDtaSaida3.Name = "textBoxDtaSaida3";
-            this.textBoxDtaSaida3.Size = new System.Drawing.Size(33, 20);
-            this.textBoxDtaSaida3.TabIndex = 125;
-            this.textBoxDtaSaida3.Text = "ano";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(208, 172);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(12, 13);
-            this.label2.TabIndex = 126;
-            this.label2.Text = "/";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(265, 172);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(12, 13);
-            this.label3.TabIndex = 127;
-            this.label3.Text = "/";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(210, 198);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(12, 13);
-            this.label4.TabIndex = 128;
-            this.label4.Text = "/";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(265, 198);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(12, 13);
-            this.label5.TabIndex = 129;
-            this.label5.Text = "/";
+            this.dateTimePickerFim.Location = new System.Drawing.Point(171, 198);
+            this.dateTimePickerFim.Name = "dateTimePickerFim";
+            this.dateTimePickerFim.Size = new System.Drawing.Size(218, 20);
+            this.dateTimePickerFim.TabIndex = 150;
             // 
             // Adicionar_Servico_Oficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 450);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxDtaSaida3);
-            this.Controls.Add(this.textBoxDtaSaida2);
-            this.Controls.Add(this.textBoxDtaSaida1);
-            this.Controls.Add(this.textBoxDtaInicio3);
-            this.Controls.Add(this.textBoxDtaInicio2);
+            this.Controls.Add(this.dateTimePickerFim);
+            this.Controls.Add(this.dateTimePickerInicio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxTipo);
             this.Controls.Add(this.labelCliente);
-            this.Controls.Add(this.textBoxDtaInicio1);
             this.Controls.Add(this.labelDtaFim);
             this.Controls.Add(this.labelDtaInicio);
             this.Controls.Add(this.labelTipoServico);
@@ -247,20 +161,12 @@
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonVoltar;
         private System.Windows.Forms.Label labelCliente;
-        private System.Windows.Forms.TextBox textBoxDtaInicio1;
         private System.Windows.Forms.Label labelDtaFim;
         private System.Windows.Forms.Label labelDtaInicio;
         private System.Windows.Forms.Label labelTipoServico;
         private System.Windows.Forms.ComboBox comboBoxTipo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxDtaInicio2;
-        private System.Windows.Forms.TextBox textBoxDtaInicio3;
-        private System.Windows.Forms.TextBox textBoxDtaSaida1;
-        private System.Windows.Forms.TextBox textBoxDtaSaida2;
-        private System.Windows.Forms.TextBox textBoxDtaSaida3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFim;
     }
 }

@@ -33,15 +33,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelTotalGasto = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxMostraNif = new System.Windows.Forms.TextBox();
             this.textBoxMostraNome = new System.Windows.Forms.TextBox();
-            this.labelMostraNif = new System.Windows.Forms.Label();
             this.labelMostraNome = new System.Windows.Forms.Label();
             this.listBoxAluguer = new System.Windows.Forms.ListBox();
-            this.buttonAdicionarCarro = new System.Windows.Forms.Button();
+            this.buttonAluguer = new System.Windows.Forms.Button();
             this.buttonServiços = new System.Windows.Forms.Button();
             this.listBoxCarroAluguer = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCarroAluguer = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -53,6 +51,7 @@
             this.buttonVoltar.TabIndex = 12;
             this.buttonVoltar.Text = "Voltar";
             this.buttonVoltar.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
             // listBoxClientes
             // 
@@ -61,6 +60,7 @@
             this.listBoxClientes.Name = "listBoxClientes";
             this.listBoxClientes.Size = new System.Drawing.Size(187, 394);
             this.listBoxClientes.TabIndex = 112;
+            this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged_1);
             // 
             // label2
             // 
@@ -91,29 +91,12 @@
             this.label10.TabIndex = 117;
             this.label10.Text = "Total Gasto:";
             // 
-            // textBoxMostraNif
-            // 
-            this.textBoxMostraNif.Location = new System.Drawing.Point(271, 75);
-            this.textBoxMostraNif.Name = "textBoxMostraNif";
-            this.textBoxMostraNif.Size = new System.Drawing.Size(302, 20);
-            this.textBoxMostraNif.TabIndex = 116;
-            // 
             // textBoxMostraNome
             // 
             this.textBoxMostraNome.Location = new System.Drawing.Point(271, 49);
             this.textBoxMostraNome.Name = "textBoxMostraNome";
             this.textBoxMostraNome.Size = new System.Drawing.Size(302, 20);
             this.textBoxMostraNome.TabIndex = 115;
-            // 
-            // labelMostraNif
-            // 
-            this.labelMostraNif.AutoSize = true;
-            this.labelMostraNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMostraNif.Location = new System.Drawing.Point(233, 73);
-            this.labelMostraNif.Name = "labelMostraNif";
-            this.labelMostraNif.Size = new System.Drawing.Size(32, 20);
-            this.labelMostraNif.TabIndex = 114;
-            this.labelMostraNif.Text = "Nif:";
             // 
             // labelMostraNome
             // 
@@ -132,15 +115,17 @@
             this.listBoxAluguer.Name = "listBoxAluguer";
             this.listBoxAluguer.Size = new System.Drawing.Size(231, 225);
             this.listBoxAluguer.TabIndex = 120;
+            this.listBoxAluguer.SelectedIndexChanged += new System.EventHandler(this.listBoxAluguer_SelectedIndexChanged);
             // 
-            // buttonAdicionarCarro
+            // buttonAluguer
             // 
-            this.buttonAdicionarCarro.Location = new System.Drawing.Point(450, 351);
-            this.buttonAdicionarCarro.Name = "buttonAdicionarCarro";
-            this.buttonAdicionarCarro.Size = new System.Drawing.Size(102, 21);
-            this.buttonAdicionarCarro.TabIndex = 121;
-            this.buttonAdicionarCarro.Text = "Adicionar Aluguer";
-            this.buttonAdicionarCarro.UseVisualStyleBackColor = true;
+            this.buttonAluguer.Location = new System.Drawing.Point(450, 351);
+            this.buttonAluguer.Name = "buttonAluguer";
+            this.buttonAluguer.Size = new System.Drawing.Size(102, 21);
+            this.buttonAluguer.TabIndex = 121;
+            this.buttonAluguer.Text = "Adicionar Aluguer";
+            this.buttonAluguer.UseVisualStyleBackColor = true;
+            this.buttonAluguer.Click += new System.EventHandler(this.buttonAluguer_Click);
             // 
             // buttonServiços
             // 
@@ -159,14 +144,15 @@
             this.listBoxCarroAluguer.Size = new System.Drawing.Size(217, 225);
             this.listBoxCarroAluguer.TabIndex = 123;
             // 
-            // button1
+            // buttonCarroAluguer
             // 
-            this.button1.Location = new System.Drawing.Point(214, 355);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(142, 21);
-            this.button1.TabIndex = 124;
-            this.button1.Text = "Adicionar Carro Aluguer";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonCarroAluguer.Location = new System.Drawing.Point(214, 355);
+            this.buttonCarroAluguer.Name = "buttonCarroAluguer";
+            this.buttonCarroAluguer.Size = new System.Drawing.Size(142, 21);
+            this.buttonCarroAluguer.TabIndex = 124;
+            this.buttonCarroAluguer.Text = "Adicionar Carro Aluguer";
+            this.buttonCarroAluguer.UseVisualStyleBackColor = true;
+            this.buttonCarroAluguer.Click += new System.EventHandler(this.buttonCarroAluguer_Click);
             // 
             // button2
             // 
@@ -183,22 +169,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(706, 442);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCarroAluguer);
             this.Controls.Add(this.listBoxCarroAluguer);
             this.Controls.Add(this.buttonServiços);
-            this.Controls.Add(this.buttonAdicionarCarro);
+            this.Controls.Add(this.buttonAluguer);
             this.Controls.Add(this.listBoxAluguer);
             this.Controls.Add(this.labelTotalGasto);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBoxMostraNif);
             this.Controls.Add(this.textBoxMostraNome);
-            this.Controls.Add(this.labelMostraNif);
             this.Controls.Add(this.labelMostraNome);
             this.Controls.Add(this.listBoxClientes);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonVoltar);
             this.Name = "Gestao_Aluguer";
             this.Text = "Gestao_Aluguer";
+            this.Load += new System.EventHandler(this.Gestao_Aluguer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,15 +196,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelTotalGasto;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxMostraNif;
         private System.Windows.Forms.TextBox textBoxMostraNome;
-        private System.Windows.Forms.Label labelMostraNif;
         private System.Windows.Forms.Label labelMostraNome;
         private System.Windows.Forms.ListBox listBoxAluguer;
-        private System.Windows.Forms.Button buttonAdicionarCarro;
+        private System.Windows.Forms.Button buttonAluguer;
         private System.Windows.Forms.Button buttonServiços;
         private System.Windows.Forms.ListBox listBoxCarroAluguer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCarroAluguer;
         private System.Windows.Forms.Button button2;
     }
 }

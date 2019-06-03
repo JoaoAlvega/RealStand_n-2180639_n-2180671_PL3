@@ -36,21 +36,26 @@ namespace Real_Stand
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            if (comboBoxTipo.SelectedItem.ToString() == null || textBoxDtaInicio1.Text.Length == 0)
+            try
             {
-                MessageBox.Show("Caixa de Texto vazia");
+                if (comboBoxTipo.SelectedItem.ToString() == null)
+                {
+                    MessageBox.Show("Caixa de Texto vazia");
+                }
+                else
+                {
+
+                    Servico servico = new Servico(dateTimePickerInicio.Value.ToString(), dateTimePickerFim.Value.ToString(), comboBoxTipo.SelectedItem.ToString());
+                    carroOficina.Servicos.Add(servico);
+
+                    minhaOficina.SaveChanges();
+                    MessageBox.Show("Alteracões Guardadas");
+                }
             }
-            else
+            catch
             {
-                string DtaInicioCompleta = textBoxDtaInicio1.Text + "/" + textBoxDtaInicio2.Text + "/" + textBoxDtaInicio3.Text;
-                string DtaFimCompleta = textBoxDtaSaida1.Text + "/" + textBoxDtaSaida2.Text + "/" + textBoxDtaSaida3.Text;
-
-                Servico servico = new Servico(DtaInicioCompleta, DtaFimCompleta, comboBoxTipo.SelectedItem.ToString());
-                carroOficina.Servicos.Add(servico);
-
-                minhaOficina.SaveChanges();
-                MessageBox.Show("Alteracões Guardadas");
-            }
+                return;
+            } 
         }
     }
 }

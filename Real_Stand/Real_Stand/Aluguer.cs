@@ -20,9 +20,9 @@ public partial class Aluguer
 
     public int IdAluguer { get; set; }
 
-    public int DataInicio { get; set; }
+    public string DataInicio { get; set; }
 
-    public int DataFim { get; set; }
+    public string DataFim { get; set; }
 
     public int Valor { get; set; }
 

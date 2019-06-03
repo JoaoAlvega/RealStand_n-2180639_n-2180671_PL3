@@ -28,23 +28,32 @@ namespace Real_Stand
 
         private void clienteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (nomeTextBox.Text.Length == 0 || nIFTextBox.Text.Length == 0 || moradaTextBox.Text.Length == 0 || contactoTextBox.Text.Length == 0)
+                {
+                    MessageBox.Show("Caixa de Texto vazia");
+                }
+                if (nIFTextBox.Text.Length != 9)
+                {
+                    MessageBox.Show("Nif tem de conter 9 digitos");
+                }
+                if (contactoTextBox.Text.Length != 9)
+                {
+                    MessageBox.Show("Contacto tem de conter 9 digitos");
+                }
+                else
+                {
+                    minhaOficina.SaveChanges();
+                    MessageBox.Show("Guardado Alterações");
+                }
+            }
+            catch
+            {
+                return;
+            }
 
-            if (nomeTextBox.Text.Length == 0 || nIFTextBox.Text.Length == 0 || moradaTextBox.Text.Length == 0 || contactoTextBox.Text.Length == 0)
-            {
-                MessageBox.Show("Caixa de Texto vazia");
-            }
-            if (nIFTextBox.Text.Length != 9)
-            {
-                MessageBox.Show("Nif tem de conter 9 digitos");
-            }
-            if (contactoTextBox.Text.Length != 9)
-            {
-                MessageBox.Show("Contacto tem de conter 9 digitos");
-            }
-            else
-            {
-                minhaOficina.SaveChanges();
-            }
+            
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)

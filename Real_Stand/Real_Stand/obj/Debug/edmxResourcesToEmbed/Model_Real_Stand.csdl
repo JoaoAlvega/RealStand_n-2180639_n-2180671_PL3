@@ -70,8 +70,8 @@
       <PropertyRef Name="IdAluguer" />
     </Key>
     <Property Name="IdAluguer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="DataInicio" Type="Int32" Nullable="false" />
-    <Property Name="DataFim" Type="Int32" Nullable="false" />
+    <Property Name="DataInicio" Type="String" Nullable="false" />
+    <Property Name="DataFim" Type="String" Nullable="false" />
     <Property Name="Valor" Type="Int32" Nullable="false" />
     <Property Name="Kms" Type="Int32" Nullable="false" />
     <Property Name="ClienteIdCliente" Type="Int32" Nullable="false" />

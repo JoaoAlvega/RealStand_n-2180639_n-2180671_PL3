@@ -77,8 +77,8 @@
       <PropertyRef Name="IdAluguer" />
     </Key>
     <Property Name="IdAluguer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="DataInicio" Type="int" Nullable="false" />
-    <Property Name="DataFim" Type="int" Nullable="false" />
+    <Property Name="DataInicio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DataFim" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Valor" Type="int" Nullable="false" />
     <Property Name="Kms" Type="int" Nullable="false" />
     <Property Name="ClienteIdCliente" Type="int" Nullable="false" />

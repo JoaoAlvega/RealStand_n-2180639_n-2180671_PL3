@@ -27,8 +27,7 @@ namespace Real_Stand
         }
         private void LerDados()
         {
-            listBoxClientes.DataSource = minhaOficina.Clientes.ToList<Cliente>();
-            
+            listBoxClientes.DataSource = minhaOficina.Clientes.ToList<Cliente>();  
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)

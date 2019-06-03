@@ -44,9 +44,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.buttonAdicionarCarro = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxMostraNif = new System.Windows.Forms.TextBox();
             this.textBoxMostraNome = new System.Windows.Forms.TextBox();
-            this.labelMostraNif = new System.Windows.Forms.Label();
             this.labelMostraNome = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonApagarClientes = new System.Windows.Forms.Button();
@@ -202,29 +200,12 @@
             this.label4.TabIndex = 89;
             this.label4.Text = "Carros";
             // 
-            // textBoxMostraNif
-            // 
-            this.textBoxMostraNif.Location = new System.Drawing.Point(239, 50);
-            this.textBoxMostraNif.Name = "textBoxMostraNif";
-            this.textBoxMostraNif.Size = new System.Drawing.Size(302, 20);
-            this.textBoxMostraNif.TabIndex = 88;
-            // 
             // textBoxMostraNome
             // 
             this.textBoxMostraNome.Location = new System.Drawing.Point(239, 24);
             this.textBoxMostraNome.Name = "textBoxMostraNome";
             this.textBoxMostraNome.Size = new System.Drawing.Size(302, 20);
             this.textBoxMostraNome.TabIndex = 87;
-            // 
-            // labelMostraNif
-            // 
-            this.labelMostraNif.AutoSize = true;
-            this.labelMostraNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMostraNif.Location = new System.Drawing.Point(201, 48);
-            this.labelMostraNif.Name = "labelMostraNif";
-            this.labelMostraNif.Size = new System.Drawing.Size(32, 20);
-            this.labelMostraNif.TabIndex = 86;
-            this.labelMostraNif.Text = "Nif:";
             // 
             // labelMostraNome
             // 
@@ -310,9 +291,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonAdicionarCarro);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxMostraNif);
             this.Controls.Add(this.textBoxMostraNome);
-            this.Controls.Add(this.labelMostraNif);
             this.Controls.Add(this.labelMostraNome);
             this.Controls.Add(this.label2);
             this.Name = "Gestao_Oficina";
@@ -341,9 +320,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonAdicionarCarro;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxMostraNif;
         private System.Windows.Forms.TextBox textBoxMostraNome;
-        private System.Windows.Forms.Label labelMostraNif;
         private System.Windows.Forms.Label labelMostraNome;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonApagarClientes;

@@ -110,6 +110,7 @@
             this.buttonGuardar.TabIndex = 128;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // buttonVoltar
             // 
@@ -119,6 +120,7 @@
             this.buttonVoltar.TabIndex = 127;
             this.buttonVoltar.Text = "Voltar";
             this.buttonVoltar.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             // 
             // textBoxMatricula
             // 
@@ -196,6 +198,9 @@
             // comboBoxEstado
             // 
             this.comboBoxEstado.FormattingEnabled = true;
+            this.comboBoxEstado.Items.AddRange(new object[] {
+            "Livre",
+            "Alugado"});
             this.comboBoxEstado.Location = new System.Drawing.Point(171, 104);
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(218, 21);
@@ -236,6 +241,7 @@
             this.Controls.Add(this.labelMarca);
             this.Name = "Adicionar_Carro_Aluguer";
             this.Text = "Adicionar_Carro_Aluguer";
+            this.Load += new System.EventHandler(this.Adicionar_Carro_Aluguer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

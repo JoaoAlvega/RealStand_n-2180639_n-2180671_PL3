@@ -79,6 +79,7 @@
     <Compile Include="Adicionar_Servico_Oficina.Designer.cs">
       <DependentUpon>Adicionar_Servico_Oficina.cs</DependentUpon>
     </Compile>
+    <Compile Include="Aluguer.created.cs" />
     <Compile Include="Aluguer.cs">
       <DependentUpon>Model_Real_Stand.tt</DependentUpon>
     </Compile>
@@ -86,6 +87,7 @@
     <Compile Include="Carro.cs">
       <DependentUpon>Model_Real_Stand.tt</DependentUpon>
     </Compile>
+    <Compile Include="CarroAluguer.created.cs" />
     <Compile Include="CarroAluguer.cs">
       <DependentUpon>Model_Real_Stand.tt</DependentUpon>
     </Compile>

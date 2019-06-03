@@ -32,5 +32,13 @@ namespace Real_Stand
             gestao_Oficina.Show(this);
             Hide();
         }
+
+        private void pictureBoxGestaoAluguer_Click(object sender, EventArgs e)
+        {
+            Gestao_Aluguer gestao_Aluguer = new Gestao_Aluguer();
+            gestao_Aluguer.Tag = this;
+            gestao_Aluguer.Show(this);
+            Hide();
+        }
     }
 }

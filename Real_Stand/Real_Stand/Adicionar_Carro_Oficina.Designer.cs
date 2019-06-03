@@ -36,13 +36,17 @@
             this.labelMatricula = new System.Windows.Forms.Label();
             this.labelKms = new System.Windows.Forms.Label();
             this.textBoxModelo = new System.Windows.Forms.TextBox();
-            this.textBoxCombustivel = new System.Windows.Forms.TextBox();
             this.textBoxNumChassis = new System.Windows.Forms.TextBox();
             this.textBoxMatricula = new System.Windows.Forms.TextBox();
             this.textBoxKms = new System.Windows.Forms.TextBox();
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.labelCliente = new System.Windows.Forms.Label();
+            this.textBoxMatricula2 = new System.Windows.Forms.TextBox();
+            this.textBoxMatricula3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxCombustivel = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelMarca
@@ -113,13 +117,6 @@
             this.textBoxModelo.Size = new System.Drawing.Size(218, 20);
             this.textBoxModelo.TabIndex = 7;
             // 
-            // textBoxCombustivel
-            // 
-            this.textBoxCombustivel.Location = new System.Drawing.Point(174, 182);
-            this.textBoxCombustivel.Name = "textBoxCombustivel";
-            this.textBoxCombustivel.Size = new System.Drawing.Size(218, 20);
-            this.textBoxCombustivel.TabIndex = 8;
-            // 
             // textBoxNumChassis
             // 
             this.textBoxNumChassis.Location = new System.Drawing.Point(174, 208);
@@ -131,9 +128,8 @@
             // 
             this.textBoxMatricula.Location = new System.Drawing.Point(174, 234);
             this.textBoxMatricula.Name = "textBoxMatricula";
-            this.textBoxMatricula.Size = new System.Drawing.Size(218, 20);
+            this.textBoxMatricula.Size = new System.Drawing.Size(35, 20);
             this.textBoxMatricula.TabIndex = 10;
-            this.textBoxMatricula.Text = "exemplo(00:AA:00)";
             // 
             // textBoxKms
             // 
@@ -172,18 +168,66 @@
             this.labelCliente.Size = new System.Drawing.Size(0, 13);
             this.labelCliente.TabIndex = 110;
             // 
+            // textBoxMatricula2
+            // 
+            this.textBoxMatricula2.Location = new System.Drawing.Point(238, 234);
+            this.textBoxMatricula2.Name = "textBoxMatricula2";
+            this.textBoxMatricula2.Size = new System.Drawing.Size(35, 20);
+            this.textBoxMatricula2.TabIndex = 111;
+            // 
+            // textBoxMatricula3
+            // 
+            this.textBoxMatricula3.Location = new System.Drawing.Point(301, 234);
+            this.textBoxMatricula3.Name = "textBoxMatricula3";
+            this.textBoxMatricula3.Size = new System.Drawing.Size(35, 20);
+            this.textBoxMatricula3.TabIndex = 112;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(279, 237);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 13);
+            this.label1.TabIndex = 113;
+            this.label1.Text = "-";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 237);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(10, 13);
+            this.label2.TabIndex = 114;
+            this.label2.Text = "-";
+            // 
+            // comboBoxCombustivel
+            // 
+            this.comboBoxCombustivel.FormattingEnabled = true;
+            this.comboBoxCombustivel.Items.AddRange(new object[] {
+            "GASOLEO",
+            "GASOLINA",
+            "GPL"});
+            this.comboBoxCombustivel.Location = new System.Drawing.Point(175, 183);
+            this.comboBoxCombustivel.Name = "comboBoxCombustivel";
+            this.comboBoxCombustivel.Size = new System.Drawing.Size(217, 21);
+            this.comboBoxCombustivel.TabIndex = 115;
+            // 
             // Adicionar_Carro_Oficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 450);
+            this.Controls.Add(this.comboBoxCombustivel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxMatricula3);
+            this.Controls.Add(this.textBoxMatricula2);
             this.Controls.Add(this.labelCliente);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.textBoxKms);
             this.Controls.Add(this.textBoxMatricula);
             this.Controls.Add(this.textBoxNumChassis);
-            this.Controls.Add(this.textBoxCombustivel);
             this.Controls.Add(this.textBoxModelo);
             this.Controls.Add(this.labelKms);
             this.Controls.Add(this.labelMatricula);
@@ -210,12 +254,16 @@
         private System.Windows.Forms.Label labelMatricula;
         private System.Windows.Forms.Label labelKms;
         private System.Windows.Forms.TextBox textBoxModelo;
-        private System.Windows.Forms.TextBox textBoxCombustivel;
         private System.Windows.Forms.TextBox textBoxNumChassis;
         private System.Windows.Forms.TextBox textBoxMatricula;
         private System.Windows.Forms.TextBox textBoxKms;
         private System.Windows.Forms.Button buttonVoltar;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Label labelCliente;
+        private System.Windows.Forms.TextBox textBoxMatricula2;
+        private System.Windows.Forms.TextBox textBoxMatricula3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxCombustivel;
     }
 }

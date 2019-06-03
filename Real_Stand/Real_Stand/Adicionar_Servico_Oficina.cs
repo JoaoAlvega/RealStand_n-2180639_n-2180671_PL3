@@ -36,22 +36,17 @@ namespace Real_Stand
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            if (comboBoxTipo.SelectedItem.ToString() == null || textBoxDtaFim.Text.Length == 0 || textBoxDtaInicio.Text.Length == 0)
+            if (comboBoxTipo.SelectedItem.ToString() == null || textBoxDtaInicio1.Text.Length == 0)
             {
                 MessageBox.Show("Caixa de Texto vazia");
             }
-            if (textBoxDtaFim.Text.Length != 10 && textBoxDtaInicio.Text.Length != 10)
-            {
-                MessageBox.Show("A data tem de estar no seguinte formato: " +
-                    "dd/mm/yyyy");
-            }
             else
             {
-                Servico servico = new Servico(textBoxDtaInicio.Text, textBoxDtaFim.Text, comboBoxTipo.SelectedItem.ToString());
-                carroOficina.Servicos.Add(servico);
+                string DtaInicioCompleta = textBoxDtaInicio1.Text + "/" + textBoxDtaInicio2.Text + "/" + textBoxDtaInicio3.Text;
+                string DtaFimCompleta = textBoxDtaSaida1.Text + "/" + textBoxDtaSaida2.Text + "/" + textBoxDtaSaida3.Text;
 
-                textBoxDtaInicio.Text = "";
-                textBoxDtaFim.Text = "";
+                Servico servico = new Servico(DtaInicioCompleta, DtaFimCompleta, comboBoxTipo.SelectedItem.ToString());
+                carroOficina.Servicos.Add(servico);
 
                 minhaOficina.SaveChanges();
                 MessageBox.Show("Alteracões Guardadas");

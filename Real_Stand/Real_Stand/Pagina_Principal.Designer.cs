@@ -100,6 +100,7 @@
             this.pictureBoxGestaoAluguer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGestaoAluguer.TabIndex = 1;
             this.pictureBoxGestaoAluguer.TabStop = false;
+            this.pictureBoxGestaoAluguer.Click += new System.EventHandler(this.pictureBoxGestaoAluguer_Click);
             // 
             // labelGestaoAluguer
             // 

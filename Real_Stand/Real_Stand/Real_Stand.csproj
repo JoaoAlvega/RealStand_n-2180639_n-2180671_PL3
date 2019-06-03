@@ -55,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adicionar_Aluguer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar_Aluguer.Designer.cs">
+      <DependentUpon>Adicionar_Aluguer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar_Carro_Aluguer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar_Carro_Aluguer.Designer.cs">
+      <DependentUpon>Adicionar_Carro_Aluguer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adicionar_Carro_Oficina.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,11 +158,20 @@
     <Compile Include="Venda.cs">
       <DependentUpon>Model_Real_Stand.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Adicionar_Aluguer.resx">
+      <DependentUpon>Adicionar_Aluguer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar_Carro_Aluguer.resx">
+      <DependentUpon>Adicionar_Carro_Aluguer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adicionar_Carro_Oficina.resx">
       <DependentUpon>Adicionar_Carro_Oficina.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Adicionar_Servico_Oficina.resx">
       <DependentUpon>Adicionar_Servico_Oficina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestao_Aluguer.resx">
+      <DependentUpon>Gestao_Aluguer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestao_Clientes.resx">
       <DependentUpon>Gestao_Clientes.cs</DependentUpon>

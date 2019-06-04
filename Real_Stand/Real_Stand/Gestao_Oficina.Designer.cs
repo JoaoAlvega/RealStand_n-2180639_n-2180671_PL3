@@ -51,6 +51,9 @@
             this.buttonApagarCarros = new System.Windows.Forms.Button();
             this.buttonServiços = new System.Windows.Forms.Button();
             this.buttonParcelas = new System.Windows.Forms.Button();
+            this.labelCarro = new System.Windows.Forms.Label();
+            this.textBoxMarca = new System.Windows.Forms.TextBox();
+            this.textBoxModelo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // listBoxClientes
@@ -266,11 +269,38 @@
             this.buttonParcelas.UseVisualStyleBackColor = true;
             this.buttonParcelas.Click += new System.EventHandler(this.buttonParcelas_Click);
             // 
+            // labelCarro
+            // 
+            this.labelCarro.AutoSize = true;
+            this.labelCarro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCarro.Location = new System.Drawing.Point(178, 50);
+            this.labelCarro.Name = "labelCarro";
+            this.labelCarro.Size = new System.Drawing.Size(52, 20);
+            this.labelCarro.TabIndex = 114;
+            this.labelCarro.Text = "Carro:";
+            // 
+            // textBoxMarca
+            // 
+            this.textBoxMarca.Location = new System.Drawing.Point(239, 50);
+            this.textBoxMarca.Name = "textBoxMarca";
+            this.textBoxMarca.Size = new System.Drawing.Size(155, 20);
+            this.textBoxMarca.TabIndex = 115;
+            // 
+            // textBoxModelo
+            // 
+            this.textBoxModelo.Location = new System.Drawing.Point(386, 50);
+            this.textBoxModelo.Name = "textBoxModelo";
+            this.textBoxModelo.Size = new System.Drawing.Size(155, 20);
+            this.textBoxModelo.TabIndex = 116;
+            // 
             // Gestao_Oficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 450);
+            this.Controls.Add(this.textBoxModelo);
+            this.Controls.Add(this.textBoxMarca);
+            this.Controls.Add(this.labelCarro);
             this.Controls.Add(this.buttonParcelas);
             this.Controls.Add(this.buttonServiços);
             this.Controls.Add(this.buttonApagarCarros);
@@ -327,5 +357,8 @@
         private System.Windows.Forms.Button buttonApagarCarros;
         private System.Windows.Forms.Button buttonServiços;
         private System.Windows.Forms.Button buttonParcelas;
+        private System.Windows.Forms.Label labelCarro;
+        private System.Windows.Forms.TextBox textBoxMarca;
+        private System.Windows.Forms.TextBox textBoxModelo;
     }
 }

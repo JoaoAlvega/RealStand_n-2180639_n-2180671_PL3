@@ -33,23 +33,32 @@ namespace Real_Stand
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-
-                if (textBoxMarca.Text.Length == 0 || textBoxModelo.Text.Length == 0 || textBoxNumChassis.Text.Length == 0)
+            try
+            {
+                if (textBoxModelo.Text.Length == 0 || textBoxNumChassis.Text.Length == 0 || comboBoxCombustivel.SelectedItem == null || comboBoxMarca.SelectedItem == null)
                 {
-                    MessageBox.Show("Caixa de Texto vazia");
+                    MessageBox.Show("Caixa de Texto vazia","Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                if (textBoxNumChassis.Text.Length != 17)
+                {
+                    MessageBox.Show("O número de chassis/quadro têm de conter 17 digitos", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
 
-                    CarroVenda carroVenda = new CarroVenda(textBoxNumChassis.Text, textBoxMarca.Text, textBoxModelo.Text, comboBoxCombustivel.SelectedItem.ToString(), textBoxExtras.Text);
+                    CarroVenda carroVenda = new CarroVenda(textBoxNumChassis.Text, comboBoxMarca.SelectedItem.ToString(), textBoxModelo.Text, comboBoxCombustivel.SelectedItem.ToString(), textBoxExtras.Text);
 
                     minhaOficina.Carros.Add(carroVenda);
 
                     minhaOficina.SaveChanges();
-                    MessageBox.Show("Alteracões Guardadas");
+                    MessageBox.Show("Alteracões Guardadas", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            
-                
+            }
+            catch
+            {
+                MessageBox.Show("Erro no sistema", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }      
         }
     }
 }

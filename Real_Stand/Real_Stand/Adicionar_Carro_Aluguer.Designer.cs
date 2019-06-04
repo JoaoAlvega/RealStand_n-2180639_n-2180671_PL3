@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxMatricula3 = new System.Windows.Forms.TextBox();
             this.textBoxMatricula2 = new System.Windows.Forms.TextBox();
-            this.labelCliente = new System.Windows.Forms.Label();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.textBoxMatricula = new System.Windows.Forms.TextBox();
@@ -43,10 +42,10 @@
             this.labelNumChassis = new System.Windows.Forms.Label();
             this.labelCombustivel = new System.Windows.Forms.Label();
             this.labelModelo = new System.Windows.Forms.Label();
-            this.textBoxMarca = new System.Windows.Forms.TextBox();
             this.labelMarca = new System.Windows.Forms.Label();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // comboBoxCombustivel
@@ -85,6 +84,8 @@
             this.textBoxMatricula3.Name = "textBoxMatricula3";
             this.textBoxMatricula3.Size = new System.Drawing.Size(35, 20);
             this.textBoxMatricula3.TabIndex = 131;
+            this.textBoxMatricula3.TextChanged += new System.EventHandler(this.textBoxMatricula3_TextChanged);
+            this.textBoxMatricula3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMatricula_KeyUp);
             // 
             // textBoxMatricula2
             // 
@@ -92,15 +93,8 @@
             this.textBoxMatricula2.Name = "textBoxMatricula2";
             this.textBoxMatricula2.Size = new System.Drawing.Size(35, 20);
             this.textBoxMatricula2.TabIndex = 130;
-            // 
-            // labelCliente
-            // 
-            this.labelCliente.AutoSize = true;
-            this.labelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente.Location = new System.Drawing.Point(165, 99);
-            this.labelCliente.Name = "labelCliente";
-            this.labelCliente.Size = new System.Drawing.Size(0, 13);
-            this.labelCliente.TabIndex = 129;
+            this.textBoxMatricula2.TextChanged += new System.EventHandler(this.textBoxMatricula2_TextChanged);
+            this.textBoxMatricula2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMatricula_KeyUp);
             // 
             // buttonGuardar
             // 
@@ -128,6 +122,8 @@
             this.textBoxMatricula.Name = "textBoxMatricula";
             this.textBoxMatricula.Size = new System.Drawing.Size(35, 20);
             this.textBoxMatricula.TabIndex = 125;
+            this.textBoxMatricula.TextChanged += new System.EventHandler(this.textBoxMatricula_TextChanged);
+            this.textBoxMatricula.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMatricula_KeyUp);
             // 
             // textBoxNumChassis
             // 
@@ -179,13 +175,6 @@
             this.labelModelo.TabIndex = 118;
             this.labelModelo.Text = "Modelo:";
             // 
-            // textBoxMarca
-            // 
-            this.textBoxMarca.Location = new System.Drawing.Point(171, 131);
-            this.textBoxMarca.Name = "textBoxMarca";
-            this.textBoxMarca.Size = new System.Drawing.Size(218, 20);
-            this.textBoxMarca.TabIndex = 117;
-            // 
             // labelMarca
             // 
             this.labelMarca.AutoSize = true;
@@ -215,11 +204,52 @@
             this.label3.TabIndex = 136;
             this.label3.Text = "Estado:";
             // 
+            // comboBoxMarca
+            // 
+            this.comboBoxMarca.FormattingEnabled = true;
+            this.comboBoxMarca.Items.AddRange(new object[] {
+            "Alfa Romeo",
+            "Audi",
+            "BMW",
+            "Chevrolet",
+            "Citroën",
+            "Dacia",
+            "Fiat",
+            "Ford",
+            "Honda",
+            "Hyundai",
+            "Jeep",
+            "Kia",
+            "Lancia",
+            "Land Rover",
+            "Lexus",
+            "Mazda",
+            "Mercedes-Benz",
+            "Mini",
+            "Mitsubishi",
+            "Nissan",
+            "Opel",
+            "Peugeot",
+            "Renault",
+            "Seat",
+            "Skoda",
+            "Smart",
+            "Subaru",
+            "Suzuki",
+            "Toyota",
+            "Volkswagen",
+            "Volvo"});
+            this.comboBoxMarca.Location = new System.Drawing.Point(172, 130);
+            this.comboBoxMarca.Name = "comboBoxMarca";
+            this.comboBoxMarca.Size = new System.Drawing.Size(217, 21);
+            this.comboBoxMarca.TabIndex = 137;
+            // 
             // Adicionar_Carro_Aluguer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 450);
+            this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxEstado);
             this.Controls.Add(this.comboBoxCombustivel);
@@ -227,7 +257,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxMatricula3);
             this.Controls.Add(this.textBoxMatricula2);
-            this.Controls.Add(this.labelCliente);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.textBoxMatricula);
@@ -237,7 +266,6 @@
             this.Controls.Add(this.labelNumChassis);
             this.Controls.Add(this.labelCombustivel);
             this.Controls.Add(this.labelModelo);
-            this.Controls.Add(this.textBoxMarca);
             this.Controls.Add(this.labelMarca);
             this.Name = "Adicionar_Carro_Aluguer";
             this.Text = "Adicionar_Carro_Aluguer";
@@ -254,7 +282,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxMatricula3;
         private System.Windows.Forms.TextBox textBoxMatricula2;
-        private System.Windows.Forms.Label labelCliente;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonVoltar;
         private System.Windows.Forms.TextBox textBoxMatricula;
@@ -264,9 +291,9 @@
         private System.Windows.Forms.Label labelNumChassis;
         private System.Windows.Forms.Label labelCombustivel;
         private System.Windows.Forms.Label labelModelo;
-        private System.Windows.Forms.TextBox textBoxMarca;
         private System.Windows.Forms.Label labelMarca;
         private System.Windows.Forms.ComboBox comboBoxEstado;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBoxMarca;
     }
 }

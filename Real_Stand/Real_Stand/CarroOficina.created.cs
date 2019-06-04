@@ -17,7 +17,7 @@ namespace Real_Stand
         }
         public override string ToString()
         {
-            return Matricula + "(" + Kms + ")";
+            return Matricula + " (" + Modelo + ")";
         }
 
     }

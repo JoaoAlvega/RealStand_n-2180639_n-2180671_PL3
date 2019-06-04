@@ -42,23 +42,48 @@ namespace Real_Stand
         //Listar Clientes
         private void listBoxClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-            
-            textBoxMostraNome.Text = clienteSelecionado.Nome;   
+            try
+            {
+                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
-            listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+                textBoxMostraNome.Text = clienteSelecionado.Nome;
+
+                listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+
+                labelTotalGasto.Text = "00.00";
+
+                textBoxMarca.Text = "";
+                textBoxModelo.Text = "";
+            }
+            catch
+            {
+                return;
+            }
+
         }
             
         //Remover Clientes
         private void buttonApagarClientes_Click(object sender, EventArgs e)
         {
-            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            try
+            {
+                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
-            minhaOficina.Clientes.Remove(clienteSelecionado);
+                if (clienteSelecionado == null)
+                    return;
 
-            minhaOficina.SaveChanges();
+                minhaOficina.Clientes.Remove(clienteSelecionado);
 
-            listBoxClientes.DataSource = minhaOficina.Clientes.ToList();
+                minhaOficina.SaveChanges();
+
+                listBoxClientes.DataSource = minhaOficina.Clientes.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Erro no sistema", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
         }
 
         //Carros-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -86,15 +111,24 @@ namespace Real_Stand
         //Listar Carro
         private void listBoxCarros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
-            if (carroSelecionado == null)
+            try
             {
-                Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
-                listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+                CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+                if (carroSelecionado == null)
+                {
+                    Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+                    listBoxCarros.DataSource = clienteSelecionado.CarrosOficina.ToList();
+                }
+                else
+                {
+                    listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+                    textBoxMarca.Text = carroSelecionado.Marca;
+                    textBoxModelo.Text = carroSelecionado.Modelo;
+                }
             }
-            else
+            catch
             {
-                listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+                return;
             }
             
         }
@@ -102,13 +136,25 @@ namespace Real_Stand
         //Remover Carro
         private void buttonApagarCarros_Click(object sender, EventArgs e)
         {
-            CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+            try
+            {
+                CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
 
-            minhaOficina.Carros.Remove(carroSelecionado);
+                if (carroSelecionado == null)
+                    return;
 
-            minhaOficina.SaveChanges();
+                minhaOficina.Carros.Remove(carroSelecionado);
 
-            listBoxClientes.DataSource = minhaOficina.Carros.ToList();
+                minhaOficina.SaveChanges();
+
+                listBoxClientes.DataSource = minhaOficina.Carros.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Erro no sistema", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
         }
 
         //Serviços-----------------------------------------------------------------------------------------------------------------------------------------------
@@ -128,27 +174,46 @@ namespace Real_Stand
         //Listar Serviços
         private void listBoxServicos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
-            if (servicoSelecionado == null)
+            try
             {
-                CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
-                listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+                Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+                if (servicoSelecionado == null)
+                {
+                    CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
+                    listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+                }
+                else
+                {
+                    listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+                }
             }
-            else
+            catch
             {
-                listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+                return;
             }
+
         }
 
         //Remover Serviços
         private void buttonServiços_Click(object sender, EventArgs e)
         {
-            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+            try
+            {
+                Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
-            minhaOficina.Servicos.Remove(servicoSelecionado);
-            minhaOficina.SaveChanges();
+                if (servicoSelecionado == null)
+                    return;
 
-            listBoxClientes.DataSource = minhaOficina.Servicos.ToList();
+                minhaOficina.Servicos.Remove(servicoSelecionado);
+                minhaOficina.SaveChanges();
+
+                listBoxClientes.DataSource = minhaOficina.Servicos.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Erro no sistema", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
 
@@ -158,34 +223,61 @@ namespace Real_Stand
         //Adicionar Parcelas
         private void buttonAdicionarParcela_Click(object sender, EventArgs e)
         {
-            Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+            try
+            {
+                Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
-            Parcela parcela = new Parcela(int.Parse(textBoxValor.Text),textBoxDescricao.Text);
+                Parcela parcela = new Parcela(int.Parse(textBoxValor.Text), textBoxDescricao.Text);
 
-            servicoSelecionado.Parcelas.Add(parcela);
+                servicoSelecionado.Parcelas.Add(parcela);
 
-            textBoxValor.Text = "";
-            textBoxDescricao.Text = "";
+                textBoxValor.Text = "";
+                textBoxDescricao.Text = "";
 
-            minhaOficina.SaveChanges();
-            listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+                minhaOficina.SaveChanges();
+                listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Erro no sistema", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
         }
             
         //Listar Parcelas
         private void listBoxParcelas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Parcela parcelaSelecionado = (Parcela)listBoxParcelas.SelectedItem;
+            try
+            {
+                Parcela parcelaSelecionado = (Parcela)listBoxParcelas.SelectedItem;
+            }
+            catch
+            {
+                return;
+            }
         }
 
         //Remover Parcelas
         private void buttonParcelas_Click(object sender, EventArgs e)
         {
-            Parcela parcelaSelecionado = (Parcela)listBoxParcelas.SelectedItem;
+            try
+            {
+                Parcela parcelaSelecionado = (Parcela)listBoxParcelas.SelectedItem;
 
-            minhaOficina.Parcelas.Remove(parcelaSelecionado);
-            minhaOficina.SaveChanges();
+                if (parcelaSelecionado == null)
+                    return;
 
-            listBoxClientes.DataSource = minhaOficina.Parcelas.ToList();
+                minhaOficina.Parcelas.Remove(parcelaSelecionado);
+                minhaOficina.SaveChanges();
+
+                listBoxClientes.DataSource = minhaOficina.Parcelas.ToList();
+            }
+            catch
+            {
+                return;
+            }
+
         }
 
         //Apenas permite a introdução de numeros

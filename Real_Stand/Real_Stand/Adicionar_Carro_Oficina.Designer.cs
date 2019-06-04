@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.labelMarca = new System.Windows.Forms.Label();
-            this.textBoxMarca = new System.Windows.Forms.TextBox();
             this.labelModelo = new System.Windows.Forms.Label();
             this.labelCombustivel = new System.Windows.Forms.Label();
             this.labelNumChassis = new System.Windows.Forms.Label();
@@ -41,34 +40,27 @@
             this.textBoxKms = new System.Windows.Forms.TextBox();
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.labelCliente = new System.Windows.Forms.Label();
             this.textBoxMatricula2 = new System.Windows.Forms.TextBox();
             this.textBoxMatricula3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxCombustivel = new System.Windows.Forms.ComboBox();
+            this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelMarca
             // 
             this.labelMarca.AutoSize = true;
-            this.labelMarca.Location = new System.Drawing.Point(128, 133);
+            this.labelMarca.Location = new System.Drawing.Point(129, 123);
             this.labelMarca.Name = "labelMarca";
             this.labelMarca.Size = new System.Drawing.Size(40, 13);
             this.labelMarca.TabIndex = 0;
             this.labelMarca.Text = "Marca:";
             // 
-            // textBoxMarca
-            // 
-            this.textBoxMarca.Location = new System.Drawing.Point(174, 130);
-            this.textBoxMarca.Name = "textBoxMarca";
-            this.textBoxMarca.Size = new System.Drawing.Size(218, 20);
-            this.textBoxMarca.TabIndex = 1;
-            // 
             // labelModelo
             // 
             this.labelModelo.AutoSize = true;
-            this.labelModelo.Location = new System.Drawing.Point(123, 159);
+            this.labelModelo.Location = new System.Drawing.Point(124, 149);
             this.labelModelo.Name = "labelModelo";
             this.labelModelo.Size = new System.Drawing.Size(45, 13);
             this.labelModelo.TabIndex = 2;
@@ -77,7 +69,7 @@
             // labelCombustivel
             // 
             this.labelCombustivel.AutoSize = true;
-            this.labelCombustivel.Location = new System.Drawing.Point(101, 185);
+            this.labelCombustivel.Location = new System.Drawing.Point(102, 175);
             this.labelCombustivel.Name = "labelCombustivel";
             this.labelCombustivel.Size = new System.Drawing.Size(67, 13);
             this.labelCombustivel.TabIndex = 3;
@@ -86,7 +78,7 @@
             // labelNumChassis
             // 
             this.labelNumChassis.AutoSize = true;
-            this.labelNumChassis.Location = new System.Drawing.Point(94, 211);
+            this.labelNumChassis.Location = new System.Drawing.Point(95, 201);
             this.labelNumChassis.Name = "labelNumChassis";
             this.labelNumChassis.Size = new System.Drawing.Size(74, 13);
             this.labelNumChassis.TabIndex = 4;
@@ -95,7 +87,7 @@
             // labelMatricula
             // 
             this.labelMatricula.AutoSize = true;
-            this.labelMatricula.Location = new System.Drawing.Point(115, 237);
+            this.labelMatricula.Location = new System.Drawing.Point(116, 227);
             this.labelMatricula.Name = "labelMatricula";
             this.labelMatricula.Size = new System.Drawing.Size(53, 13);
             this.labelMatricula.TabIndex = 5;
@@ -104,7 +96,7 @@
             // labelKms
             // 
             this.labelKms.AutoSize = true;
-            this.labelKms.Location = new System.Drawing.Point(133, 263);
+            this.labelKms.Location = new System.Drawing.Point(134, 253);
             this.labelKms.Name = "labelKms";
             this.labelKms.Size = new System.Drawing.Size(30, 13);
             this.labelKms.TabIndex = 6;
@@ -112,28 +104,30 @@
             // 
             // textBoxModelo
             // 
-            this.textBoxModelo.Location = new System.Drawing.Point(174, 156);
+            this.textBoxModelo.Location = new System.Drawing.Point(175, 146);
             this.textBoxModelo.Name = "textBoxModelo";
             this.textBoxModelo.Size = new System.Drawing.Size(218, 20);
             this.textBoxModelo.TabIndex = 7;
             // 
             // textBoxNumChassis
             // 
-            this.textBoxNumChassis.Location = new System.Drawing.Point(174, 208);
+            this.textBoxNumChassis.Location = new System.Drawing.Point(175, 198);
             this.textBoxNumChassis.Name = "textBoxNumChassis";
             this.textBoxNumChassis.Size = new System.Drawing.Size(218, 20);
             this.textBoxNumChassis.TabIndex = 9;
             // 
             // textBoxMatricula
             // 
-            this.textBoxMatricula.Location = new System.Drawing.Point(174, 234);
+            this.textBoxMatricula.Location = new System.Drawing.Point(175, 224);
             this.textBoxMatricula.Name = "textBoxMatricula";
             this.textBoxMatricula.Size = new System.Drawing.Size(35, 20);
             this.textBoxMatricula.TabIndex = 10;
+            this.textBoxMatricula.TextChanged += new System.EventHandler(this.textBoxMatricula_TextChanged);
+            this.textBoxMatricula.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMatricula_KeyUp);
             // 
             // textBoxKms
             // 
-            this.textBoxKms.Location = new System.Drawing.Point(174, 260);
+            this.textBoxKms.Location = new System.Drawing.Point(175, 250);
             this.textBoxKms.Name = "textBoxKms";
             this.textBoxKms.Size = new System.Drawing.Size(218, 20);
             this.textBoxKms.TabIndex = 11;
@@ -151,7 +145,7 @@
             // 
             // buttonGuardar
             // 
-            this.buttonGuardar.Location = new System.Drawing.Point(316, 287);
+            this.buttonGuardar.Location = new System.Drawing.Point(317, 277);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
             this.buttonGuardar.TabIndex = 109;
@@ -159,33 +153,28 @@
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
-            // labelCliente
-            // 
-            this.labelCliente.AutoSize = true;
-            this.labelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCliente.Location = new System.Drawing.Point(168, 98);
-            this.labelCliente.Name = "labelCliente";
-            this.labelCliente.Size = new System.Drawing.Size(0, 13);
-            this.labelCliente.TabIndex = 110;
-            // 
             // textBoxMatricula2
             // 
-            this.textBoxMatricula2.Location = new System.Drawing.Point(238, 234);
+            this.textBoxMatricula2.Location = new System.Drawing.Point(239, 224);
             this.textBoxMatricula2.Name = "textBoxMatricula2";
             this.textBoxMatricula2.Size = new System.Drawing.Size(35, 20);
             this.textBoxMatricula2.TabIndex = 111;
+            this.textBoxMatricula2.TextChanged += new System.EventHandler(this.textBoxMatricula2_TextChanged);
+            this.textBoxMatricula2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMatricula_KeyUp);
             // 
             // textBoxMatricula3
             // 
-            this.textBoxMatricula3.Location = new System.Drawing.Point(301, 234);
+            this.textBoxMatricula3.Location = new System.Drawing.Point(302, 224);
             this.textBoxMatricula3.Name = "textBoxMatricula3";
             this.textBoxMatricula3.Size = new System.Drawing.Size(35, 20);
             this.textBoxMatricula3.TabIndex = 112;
+            this.textBoxMatricula3.TextChanged += new System.EventHandler(this.textBoxMatricula3_TextChanged);
+            this.textBoxMatricula3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMatricula_KeyUp);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(279, 237);
+            this.label1.Location = new System.Drawing.Point(280, 227);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(10, 13);
             this.label1.TabIndex = 113;
@@ -194,7 +183,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(222, 237);
+            this.label2.Location = new System.Drawing.Point(223, 227);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(10, 13);
             this.label2.TabIndex = 114;
@@ -207,22 +196,62 @@
             "GASOLEO",
             "GASOLINA",
             "GPL"});
-            this.comboBoxCombustivel.Location = new System.Drawing.Point(175, 183);
+            this.comboBoxCombustivel.Location = new System.Drawing.Point(176, 173);
             this.comboBoxCombustivel.Name = "comboBoxCombustivel";
             this.comboBoxCombustivel.Size = new System.Drawing.Size(217, 21);
             this.comboBoxCombustivel.TabIndex = 115;
+            // 
+            // comboBoxMarca
+            // 
+            this.comboBoxMarca.FormattingEnabled = true;
+            this.comboBoxMarca.Items.AddRange(new object[] {
+            "Alfa Romeo",
+            "Audi",
+            "BMW",
+            "Chevrolet",
+            "Citroën",
+            "Dacia",
+            "Fiat",
+            "Ford",
+            "Honda",
+            "Hyundai",
+            "Jeep",
+            "Kia",
+            "Lancia",
+            "Land Rover",
+            "Lexus",
+            "Mazda",
+            "Mercedes-Benz",
+            "Mini",
+            "Mitsubishi",
+            "Nissan",
+            "Opel",
+            "Peugeot",
+            "Renault",
+            "Seat",
+            "Skoda",
+            "Smart",
+            "Subaru",
+            "Suzuki",
+            "Toyota",
+            "Volkswagen",
+            "Volvo"});
+            this.comboBoxMarca.Location = new System.Drawing.Point(176, 120);
+            this.comboBoxMarca.Name = "comboBoxMarca";
+            this.comboBoxMarca.Size = new System.Drawing.Size(217, 21);
+            this.comboBoxMarca.TabIndex = 116;
             // 
             // Adicionar_Carro_Oficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 450);
+            this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.comboBoxCombustivel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxMatricula3);
             this.Controls.Add(this.textBoxMatricula2);
-            this.Controls.Add(this.labelCliente);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.textBoxKms);
@@ -234,7 +263,6 @@
             this.Controls.Add(this.labelNumChassis);
             this.Controls.Add(this.labelCombustivel);
             this.Controls.Add(this.labelModelo);
-            this.Controls.Add(this.textBoxMarca);
             this.Controls.Add(this.labelMarca);
             this.Name = "Adicionar_Carro_Oficina";
             this.Text = "Adicionar_Carro_Oficina";
@@ -247,7 +275,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelMarca;
-        private System.Windows.Forms.TextBox textBoxMarca;
         private System.Windows.Forms.Label labelModelo;
         private System.Windows.Forms.Label labelCombustivel;
         private System.Windows.Forms.Label labelNumChassis;
@@ -259,11 +286,11 @@
         private System.Windows.Forms.TextBox textBoxKms;
         private System.Windows.Forms.Button buttonVoltar;
         private System.Windows.Forms.Button buttonGuardar;
-        private System.Windows.Forms.Label labelCliente;
         private System.Windows.Forms.TextBox textBoxMatricula2;
         private System.Windows.Forms.TextBox textBoxMatricula3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxCombustivel;
+        private System.Windows.Forms.ComboBox comboBoxMarca;
     }
 }

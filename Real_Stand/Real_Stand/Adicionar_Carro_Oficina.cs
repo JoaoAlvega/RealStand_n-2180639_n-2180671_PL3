@@ -40,7 +40,6 @@ namespace Real_Stand
         }
         private void Adicionar_Carro_Oficina_Load(object sender, EventArgs e)
         {
-            labelCliente.Text = cliente.Nome.ToString();
         }
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
@@ -53,27 +52,28 @@ namespace Real_Stand
         {
             try
             {
-                if (textBoxNumChassis.Text.Length == 0 || textBoxMarca.Text.Length == 0 || textBoxModelo.Text.Length == 0 || textBoxMatricula.Text.Length == 0 || textBoxKms.Text.Length == 0)
+                if (textBoxNumChassis.Text.Length == 0 ||textBoxModelo.Text.Length == 0 || textBoxMatricula.Text.Length == 0 || textBoxKms.Text.Length == 0 || comboBoxMarca.SelectedItem == null || comboBoxCombustivel.SelectedItem == null)
                 {
-                    MessageBox.Show("Caixa de Texto vazia");
+                    MessageBox.Show("Caixa de Texto vazia", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 if (textBoxNumChassis.Text.Length != 17)
                 {
-                    MessageBox.Show("O número de chassis/quadro têm de conter 17 digitos");
+                    MessageBox.Show("O número de chassis/quadro têm de conter 17 digitos", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
                     string MatriculaCompleta = textBoxMatricula.Text + "-" + textBoxMatricula2.Text + "-" + textBoxMatricula3.Text;
 
-                    CarroOficina carroOficina = new CarroOficina(textBoxNumChassis.Text, textBoxMarca.Text, textBoxModelo.Text, comboBoxCombustivel.SelectedItem.ToString(), MatriculaCompleta, int.Parse(textBoxKms.Text));
+                    CarroOficina carroOficina = new CarroOficina(textBoxNumChassis.Text, comboBoxMarca.SelectedItem.ToString(), textBoxModelo.Text, comboBoxCombustivel.SelectedItem.ToString(), MatriculaCompleta, int.Parse(textBoxKms.Text));
                     cliente.CarrosOficina.Add(carroOficina);
 
                     minhaOficina.SaveChanges();
-                    MessageBox.Show("Alteracões Guardadas");
+                    MessageBox.Show("Alteracões Guardadas", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch
             {
+                MessageBox.Show("Erro no sistema", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -90,6 +90,51 @@ namespace Real_Stand
             {
                 e.Handled = true;
             }
+        }
+        //Apenas permite a introdução de letras maiusculas
+        private void textBoxMatricula_KeyUp(object sender, KeyEventArgs e)
+        {
+            TextBox currentContainer = ((TextBox)sender);
+            int caretPosition = currentContainer.SelectionStart;
+
+            currentContainer.Text = currentContainer.Text.ToUpper();
+            currentContainer.SelectionStart = caretPosition++;
+        }
+
+        private const int MaxCharsPerRow = 2;
+        private const int MaxLines = 1;
+
+        private void textBoxMatricula_TextChanged(object sender, EventArgs e)
+        {
+            string[] lines = textBoxMatricula.Lines;
+            var newLines = new List<string>();
+            for (int i = 0; i < lines.Length && i < MaxLines; i++)
+            {
+                newLines.Add(lines[i].Substring(0, Math.Min(lines[i].Length, MaxCharsPerRow)));
+            }
+            textBoxMatricula.Lines = newLines.ToArray();
+        }
+
+        private void textBoxMatricula2_TextChanged(object sender, EventArgs e)
+        {
+            string[] lines = textBoxMatricula2.Lines;
+            var newLines = new List<string>();
+            for (int i = 0; i < lines.Length && i < MaxLines; i++)
+            {
+                newLines.Add(lines[i].Substring(0, Math.Min(lines[i].Length, MaxCharsPerRow)));
+            }
+            textBoxMatricula2.Lines = newLines.ToArray();
+        }
+
+        private void textBoxMatricula3_TextChanged(object sender, EventArgs e)
+        {
+            string[] lines = textBoxMatricula3.Lines;
+            var newLines = new List<string>();
+            for (int i = 0; i < lines.Length && i < MaxLines; i++)
+            {
+                newLines.Add(lines[i].Substring(0, Math.Min(lines[i].Length, MaxCharsPerRow)));
+            }
+            textBoxMatricula3.Lines = newLines.ToArray();
         }
     }
 }

@@ -30,14 +30,15 @@
         {
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.buttonVoltar = new System.Windows.Forms.Button();
-            this.labelCliente = new System.Windows.Forms.Label();
             this.labelDtaFim = new System.Windows.Forms.Label();
             this.labelDtaInicio = new System.Windows.Forms.Label();
             this.labelTipoServico = new System.Windows.Forms.Label();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerInicio = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFim = new System.Windows.Forms.DateTimePicker();
+            this.textBoxModelo = new System.Windows.Forms.TextBox();
+            this.textBoxMarca = new System.Windows.Forms.TextBox();
+            this.labelCarro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonGuardar
@@ -59,14 +60,6 @@
             this.buttonVoltar.Text = "Voltar";
             this.buttonVoltar.UseVisualStyleBackColor = true;
             this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
-            // 
-            // labelCliente
-            // 
-            this.labelCliente.AutoSize = true;
-            this.labelCliente.Location = new System.Drawing.Point(223, 82);
-            this.labelCliente.Name = "labelCliente";
-            this.labelCliente.Size = new System.Drawing.Size(0, 13);
-            this.labelCliente.TabIndex = 118;
             // 
             // labelDtaFim
             // 
@@ -110,15 +103,6 @@
             this.comboBoxTipo.Size = new System.Drawing.Size(218, 21);
             this.comboBoxTipo.TabIndex = 119;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(165, 107);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 120;
-            // 
             // dateTimePickerInicio
             // 
             this.dateTimePickerInicio.Location = new System.Drawing.Point(171, 169);
@@ -133,16 +117,41 @@
             this.dateTimePickerFim.Size = new System.Drawing.Size(218, 20);
             this.dateTimePickerFim.TabIndex = 150;
             // 
+            // textBoxModelo
+            // 
+            this.textBoxModelo.Location = new System.Drawing.Point(279, 59);
+            this.textBoxModelo.Name = "textBoxModelo";
+            this.textBoxModelo.Size = new System.Drawing.Size(110, 20);
+            this.textBoxModelo.TabIndex = 157;
+            // 
+            // textBoxMarca
+            // 
+            this.textBoxMarca.Location = new System.Drawing.Point(171, 59);
+            this.textBoxMarca.Name = "textBoxMarca";
+            this.textBoxMarca.Size = new System.Drawing.Size(113, 20);
+            this.textBoxMarca.TabIndex = 156;
+            // 
+            // labelCarro
+            // 
+            this.labelCarro.AutoSize = true;
+            this.labelCarro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCarro.Location = new System.Drawing.Point(110, 56);
+            this.labelCarro.Name = "labelCarro";
+            this.labelCarro.Size = new System.Drawing.Size(52, 20);
+            this.labelCarro.TabIndex = 155;
+            this.labelCarro.Text = "Carro:";
+            // 
             // Adicionar_Servico_Oficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 450);
+            this.Controls.Add(this.textBoxModelo);
+            this.Controls.Add(this.textBoxMarca);
+            this.Controls.Add(this.labelCarro);
             this.Controls.Add(this.dateTimePickerFim);
             this.Controls.Add(this.dateTimePickerInicio);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxTipo);
-            this.Controls.Add(this.labelCliente);
             this.Controls.Add(this.labelDtaFim);
             this.Controls.Add(this.labelDtaInicio);
             this.Controls.Add(this.labelTipoServico);
@@ -160,13 +169,14 @@
 
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button buttonVoltar;
-        private System.Windows.Forms.Label labelCliente;
         private System.Windows.Forms.Label labelDtaFim;
         private System.Windows.Forms.Label labelDtaInicio;
         private System.Windows.Forms.Label labelTipoServico;
         private System.Windows.Forms.ComboBox comboBoxTipo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePickerInicio;
         private System.Windows.Forms.DateTimePicker dateTimePickerFim;
+        private System.Windows.Forms.TextBox textBoxModelo;
+        private System.Windows.Forms.TextBox textBoxMarca;
+        private System.Windows.Forms.Label labelCarro;
     }
 }

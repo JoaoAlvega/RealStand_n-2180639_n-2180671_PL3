@@ -46,6 +46,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxCombustivel = new System.Windows.Forms.ComboBox();
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
+            this.textBoxNif = new System.Windows.Forms.TextBox();
+            this.labelNif = new System.Windows.Forms.Label();
+            this.textBoxMostraNome = new System.Windows.Forms.TextBox();
+            this.labelMostraNome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelMarca
@@ -241,11 +245,49 @@
             this.comboBoxMarca.Size = new System.Drawing.Size(217, 21);
             this.comboBoxMarca.TabIndex = 116;
             // 
+            // textBoxNif
+            // 
+            this.textBoxNif.Location = new System.Drawing.Point(176, 67);
+            this.textBoxNif.Name = "textBoxNif";
+            this.textBoxNif.Size = new System.Drawing.Size(217, 20);
+            this.textBoxNif.TabIndex = 120;
+            // 
+            // labelNif
+            // 
+            this.labelNif.AutoSize = true;
+            this.labelNif.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNif.Location = new System.Drawing.Point(137, 67);
+            this.labelNif.Name = "labelNif";
+            this.labelNif.Size = new System.Drawing.Size(32, 20);
+            this.labelNif.TabIndex = 119;
+            this.labelNif.Text = "Nif:";
+            // 
+            // textBoxMostraNome
+            // 
+            this.textBoxMostraNome.Location = new System.Drawing.Point(176, 41);
+            this.textBoxMostraNome.Name = "textBoxMostraNome";
+            this.textBoxMostraNome.Size = new System.Drawing.Size(217, 20);
+            this.textBoxMostraNome.TabIndex = 118;
+            // 
+            // labelMostraNome
+            // 
+            this.labelMostraNome.AutoSize = true;
+            this.labelMostraNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMostraNome.Location = new System.Drawing.Point(114, 39);
+            this.labelMostraNome.Name = "labelMostraNome";
+            this.labelMostraNome.Size = new System.Drawing.Size(55, 20);
+            this.labelMostraNome.TabIndex = 117;
+            this.labelMostraNome.Text = "Nome:";
+            // 
             // Adicionar_Carro_Oficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 450);
+            this.Controls.Add(this.textBoxNif);
+            this.Controls.Add(this.labelNif);
+            this.Controls.Add(this.textBoxMostraNome);
+            this.Controls.Add(this.labelMostraNome);
             this.Controls.Add(this.comboBoxMarca);
             this.Controls.Add(this.comboBoxCombustivel);
             this.Controls.Add(this.label2);
@@ -292,5 +334,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxCombustivel;
         private System.Windows.Forms.ComboBox comboBoxMarca;
+        private System.Windows.Forms.TextBox textBoxNif;
+        private System.Windows.Forms.Label labelNif;
+        private System.Windows.Forms.TextBox textBoxMostraNome;
+        private System.Windows.Forms.Label labelMostraNome;
     }
 }

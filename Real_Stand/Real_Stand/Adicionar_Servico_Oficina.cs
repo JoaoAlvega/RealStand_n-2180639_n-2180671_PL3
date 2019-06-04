@@ -24,7 +24,8 @@ namespace Real_Stand
 
         private void Adicionar_Servico_Oficina_Load(object sender, EventArgs e)
         {
-            labelCliente.Text = carroOficina.Matricula.ToString();
+            textBoxMarca.Text = carroOficina.Marca;
+            textBoxModelo.Text = carroOficina.Modelo;
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace Real_Stand
             {
                 if (comboBoxTipo.SelectedItem.ToString() == null)
                 {
-                    MessageBox.Show("Caixa de Texto vazia");
+                    MessageBox.Show("Caixa de Texto vazia", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -49,11 +50,12 @@ namespace Real_Stand
                     carroOficina.Servicos.Add(servico);
 
                     minhaOficina.SaveChanges();
-                    MessageBox.Show("Alteracões Guardadas");
+                    MessageBox.Show("Alteracões Guardadas", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch
             {
+                MessageBox.Show("Erro no sistema", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             } 
         }

@@ -225,17 +225,22 @@ namespace Real_Stand
         {
             try
             {
-                Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+                if(textBoxValor.Text == null || textBoxDescricao.Text == null)
+                {
+                    MessageBox.Show("Caixa de Texto vazia", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
 
-                Parcela parcela = new Parcela(int.Parse(textBoxValor.Text), textBoxDescricao.Text);
+                    Parcela parcela = new Parcela(int.Parse(textBoxValor.Text), textBoxDescricao.Text);
 
-                servicoSelecionado.Parcelas.Add(parcela);
+                    servicoSelecionado.Parcelas.Add(parcela);
 
-                textBoxValor.Text = "";
-                textBoxDescricao.Text = "";
 
-                minhaOficina.SaveChanges();
-                listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+                    minhaOficina.SaveChanges();
+                    listBoxParcelas.DataSource = servicoSelecionado.Parcelas.ToList();
+                }
             }
             catch
             {

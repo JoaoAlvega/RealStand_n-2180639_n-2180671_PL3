@@ -40,6 +40,8 @@ namespace Real_Stand
         }
         private void Adicionar_Carro_Oficina_Load(object sender, EventArgs e)
         {
+            textBoxMostraNome.Text = cliente.Nome;
+            textBoxNif.Text = cliente.NIF.ToString();
         }
         private void buttonVoltar_Click(object sender, EventArgs e)
         {

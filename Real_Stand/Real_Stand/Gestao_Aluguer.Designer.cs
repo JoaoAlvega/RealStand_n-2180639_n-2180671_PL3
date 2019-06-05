@@ -115,7 +115,6 @@
             this.listBoxAluguer.Name = "listBoxAluguer";
             this.listBoxAluguer.Size = new System.Drawing.Size(231, 225);
             this.listBoxAluguer.TabIndex = 120;
-            this.listBoxAluguer.SelectedIndexChanged += new System.EventHandler(this.listBoxAluguer_SelectedIndexChanged);
             // 
             // buttonAluguer
             // 

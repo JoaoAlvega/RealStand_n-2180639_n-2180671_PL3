@@ -27,13 +27,14 @@ namespace Real_Stand
         {
             listBoxClientes.DataSource = minhaOficina.Clientes.ToList<Cliente>();
             listBoxCarroAluguer.DataSource = minhaOficina.Carros.OfType<CarroAluguer>().ToList();
-            listBoxAluguer.DataSource = minhaOficina.Alugueres.OfType<Aluguer>().ToList();
         }
         void Form_Closed(object sender, FormClosedEventArgs e)
         {
             listBoxClientes.DataSource = minhaOficina.Clientes.ToList<Cliente>();
             listBoxCarroAluguer.DataSource = minhaOficina.Carros.OfType<CarroAluguer>().ToList();
-            listBoxAluguer.DataSource = minhaOficina.Alugueres.OfType<Aluguer>().ToList();
+
+            Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
+            listBoxAluguer.DataSource = clienteSelecionado.Alugueres.ToList();
         }
 
         private void buttonVoltar_Click(object sender, EventArgs e)
@@ -74,16 +75,14 @@ namespace Real_Stand
             adicionar_Aluguer.FormClosed += new FormClosedEventHandler(Form_Closed);
         }
 
-        private void listBoxAluguer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
+        //Clientes-------------------------------------------------------------------------------------------------------------------------------------------------- versão
         private void listBoxClientes_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             Cliente clienteSelecionado = (Cliente)listBoxClientes.SelectedItem;
 
             textBoxMostraNome.Text = clienteSelecionado.Nome;
+
+            listBoxAluguer.DataSource = clienteSelecionado.Alugueres.ToList();
         }
     }
 }

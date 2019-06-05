@@ -61,16 +61,17 @@
             this.listBoxClientes.FormattingEnabled = true;
             this.listBoxClientes.Location = new System.Drawing.Point(10, 43);
             this.listBoxClientes.Name = "listBoxClientes";
-            this.listBoxClientes.Size = new System.Drawing.Size(142, 394);
+            this.listBoxClientes.Size = new System.Drawing.Size(142, 368);
             this.listBoxClientes.TabIndex = 109;
             this.listBoxClientes.SelectedIndexChanged += new System.EventHandler(this.listBoxClientes_SelectedIndexChanged);
             // 
             // listBoxCarros
             // 
             this.listBoxCarros.FormattingEnabled = true;
+            this.listBoxCarros.HorizontalScrollbar = true;
             this.listBoxCarros.Location = new System.Drawing.Point(181, 124);
             this.listBoxCarros.Name = "listBoxCarros";
-            this.listBoxCarros.Size = new System.Drawing.Size(144, 264);
+            this.listBoxCarros.Size = new System.Drawing.Size(144, 238);
             this.listBoxCarros.TabIndex = 108;
             this.listBoxCarros.SelectedIndexChanged += new System.EventHandler(this.listBoxCarros_SelectedIndexChanged);
             // 
@@ -141,9 +142,10 @@
             // listBoxParcelas
             // 
             this.listBoxParcelas.FormattingEnabled = true;
+            this.listBoxParcelas.HorizontalScrollbar = true;
             this.listBoxParcelas.Location = new System.Drawing.Point(572, 124);
             this.listBoxParcelas.Name = "listBoxParcelas";
-            this.listBoxParcelas.Size = new System.Drawing.Size(247, 225);
+            this.listBoxParcelas.Size = new System.Drawing.Size(247, 199);
             this.listBoxParcelas.TabIndex = 96;
             this.listBoxParcelas.SelectedIndexChanged += new System.EventHandler(this.listBoxParcelas_SelectedIndexChanged);
             // 
@@ -169,9 +171,10 @@
             // listBoxServicos
             // 
             this.listBoxServicos.FormattingEnabled = true;
+            this.listBoxServicos.HorizontalScrollbar = true;
             this.listBoxServicos.Location = new System.Drawing.Point(349, 124);
             this.listBoxServicos.Name = "listBoxServicos";
-            this.listBoxServicos.Size = new System.Drawing.Size(192, 264);
+            this.listBoxServicos.Size = new System.Drawing.Size(192, 238);
             this.listBoxServicos.TabIndex = 92;
             this.listBoxServicos.SelectedIndexChanged += new System.EventHandler(this.listBoxServicos_SelectedIndexChanged);
             // 

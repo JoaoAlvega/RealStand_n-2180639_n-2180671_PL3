@@ -177,10 +177,10 @@ namespace Real_Stand
             try
             {
                 Servico servicoSelecionado = (Servico)listBoxServicos.SelectedItem;
+
                 if (servicoSelecionado == null)
                 {
-                    CarroOficina carroSelecionado = (CarroOficina)listBoxCarros.SelectedItem;
-                    listBoxServicos.DataSource = carroSelecionado.Servicos.ToList();
+                    return;
                 }
                 else
                 {
@@ -191,7 +191,6 @@ namespace Real_Stand
             {
                 return;
             }
-
         }
 
         //Remover Serviços
